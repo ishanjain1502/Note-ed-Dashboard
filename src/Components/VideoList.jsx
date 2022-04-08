@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
 import Video from './Video';
-
+import Header from './Header';
 export default function VideoList() {
 const [videos,setVideos]=useState();
 
@@ -28,9 +28,18 @@ useEffect(()=>{
       
 
     <div>
-        {videos && videos.map(video=>{
-            return <Video video={video}></Video>
-        })}
+        <Header></Header>
+        <main className='flex mt-16'>
+            <div className='basis-1/4'>
+
+            </div>
+            <div className='flex flex-1 flex-col'>
+
+            {videos && videos.map(video=>{
+                return <Video video={video}></Video>
+            })}
+            </div>
+        </main>
     </div>
      
   )
