@@ -16,6 +16,10 @@ body {
   font-family: 'Patrick Hand', cursive;
 }
 
+.logout{
+  background: #5b21b6;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

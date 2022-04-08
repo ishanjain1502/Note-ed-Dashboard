@@ -16,8 +16,8 @@ export default function Header() {
             </a>
             
         </div>
-        <div className='flex justify-center items-center basis-1/4'>
-        <Button variant="contained" className='w-32 h-10'>Logout</Button>
+        <div className='flex justify-center items-center  basis-1/4'>
+        <Button style={{'background':'#4f46e5'}} variant="contained" className='w-32 h-10  logout'>Logout</Button>
 
             {/* <div className='flex font-medium w-28 h-10 rounded justify-center content-center border-4 border-indigo-700 text-blue-700'>Logout</div> */}
         </div>
