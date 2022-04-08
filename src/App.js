@@ -1,13 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {Route,Routes} from 'react-router-dom';
+import VideoList from './Components/VideoList';
+import VideoPage from './Components/VideoPage';
 function App() {
   return (
-    <>
-       <h1 className="text-3xl text-yellow-600 font-bold underline">
-      Hello world!
-    </h1>
-    </>
+    <Routes>
+      <Route path='/dashboard' element={<VideoList/>}></Route>
+      <Route path='/video/:videoname' element={<VideoPage/>}></Route>
+    
+    </Routes>
   );
 }
 
