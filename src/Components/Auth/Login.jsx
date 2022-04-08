@@ -1,5 +1,5 @@
 /*global chrome*/
-import React from 'react'
+import React , {useState} from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,7 +8,9 @@ import { useNavigate } from 'react-router-dom';
 export default function Login(props) {
     const navigate = useNavigate();
     const {loggedInStatus,setloggedInStatus} = props;
-    
+    const [email,setEmail] = useState('siya@gmail.com');
+    const [password,setPassword] = useState('siya');
+
     const sendLoggedinInfo = ({ extensionId, authInfo})=>{
         chrome.runtime.sendMessage(extensionId, { authInfo }, response => {
             if (!response.success) {
@@ -23,8 +25,8 @@ export default function Login(props) {
         e.preventDefault();
         console.log("logging in...");
         axios.post(`https://Backend-1.prathameshdukare.repl.co/api/v1/signin`, {
-            "email":"siya@gmail.com",
-            "password":"siya"
+            "email":email,
+            "password":password
         }).then(data => data.data)
         .then(data =>{
             console.log(data);
