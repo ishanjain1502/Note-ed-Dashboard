@@ -11,6 +11,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.main-heading{
+ 
+  font-weight: 600;
+  font-family: 'Patrick Hand', cursive;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
