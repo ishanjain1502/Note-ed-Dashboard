@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Login(props) {
     const navigate = useNavigate();
     const {loggedInStatus,setloggedInStatus} = props;
+    
     const sendLoggedinInfo = ({ extensionId, authInfo})=>{
         chrome.runtime.sendMessage(extensionId, { authInfo }, response => {
             if (!response.success) {
