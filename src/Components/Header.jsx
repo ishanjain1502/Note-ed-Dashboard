@@ -1,5 +1,7 @@
 import React from 'react'
 import DashboardIcon from '@mui/icons-material/Dashboard';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import NavItem from './NavItem';
 import {Button} from '@mui/material'
 export default function Header() {
   return (
@@ -8,12 +10,14 @@ export default function Header() {
             <h1 className='main-heading text-3xl text-indigo-600 ml-4'>Note-ed</h1>
         </div>
         <div className='text-gray-500 text-base font-semibold text-base basis-1/2 flex items-center justify-center'>
-            <a href="/dashboard" className='flex flex-col items-center hover:text-blue-900'>
+            <NavItem icon={<DashboardIcon/>} title={"Dashboard"} link='\dashboard'></NavItem>
+            <NavItem icon={<AccountCircleIcon/>} title={"Profile"} link='\profile'></NavItem>
+            {/* <a href="/dashboard" className='flex flex-col items-center hover:text-blue-900'>
                 <div className='flex justify-center w-32 '>
                  <DashboardIcon />
                 </div>
                 <p className=' flex justify-center items-center rounded w-32  h-8  decoration-4 hover:text-blue-900'>Dashboard</p>
-            </a>
+            </a> */}
             
         </div>
         <div className='flex justify-center items-center  basis-1/4'>
