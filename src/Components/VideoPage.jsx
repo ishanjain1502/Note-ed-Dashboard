@@ -50,7 +50,7 @@ const convertToseconds=(time)=>{
     <>
       
        <Header></Header>
-       <div className='mt-28 mx-64 rounded flex flex-col content-center bg-indigo-300 pt-8'>
+       <div className='mt-12 mb-28 mx-64 rounded flex flex-col content-center bg-indigo-300 pt-8'>
 
         <ReactPlayer className='self-center' ref={player} controls={true} url={video_url} />
             <div className='self-start px-32 mt-10'>

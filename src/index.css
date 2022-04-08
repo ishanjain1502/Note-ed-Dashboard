@@ -12,8 +12,9 @@ body {
 }
 
 .main-heading{
-  font-family: 'Poppins', sans-serif;
+ 
   font-weight: 600;
+  font-family: 'Patrick Hand', cursive;
 }
 
 code {
