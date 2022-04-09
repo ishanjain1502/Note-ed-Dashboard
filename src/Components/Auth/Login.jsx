@@ -34,6 +34,7 @@ export default function Login(props) {
             setloggedInStatus(true);
 
             //sending loggedin info to extension
+            console.log("sending msg to extension");
             let authObj =  JSON.stringify({"loggedInStatus":true,authToken:data.token});
             sendLoggedinInfo({ extensionId: 'fkldjphfipjbgmadnppjeebikbhoaelm', authInfo: authObj})
 
