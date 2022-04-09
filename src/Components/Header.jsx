@@ -1,9 +1,38 @@
+/*global chrome*/
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import NavItem from './NavItem';
 import {Button} from '@mui/material'
+
 export default function Header() {
+    const navigate = useNavigate();
+
+    const sendLoggedOutInfo = ({ extensionId, authInfo})=>{
+        chrome.runtime.sendMessage(extensionId, { authInfo }, response => {
+            if (!response.success) {
+              console.log('error sending message', response);
+              return response;
+            }
+            console.log(response)
+          });
+    }
+
+    const logMeOut = ()=>{
+        console.log("loggging out");
+
+        // sending logged out info to extension
+        let authObj =  JSON.stringify({"loggedInStatus":false,"authToken":null});
+        sendLoggedOutInfo({ extensionId: 'fkldjphfipjbgmadnppjeebikbhoaelm', authInfo: authObj})
+        localStorage.removeItem('token');
+        // setloggedInStatus(false); 
+
+        // redirect to login
+        navigate('/login');
+    }
+
   return (
     <div className='flex pt-4 bg-indigo-200 h-24'>
         <div className=' flex items-center basis-1/4'>
@@ -21,7 +50,7 @@ export default function Header() {
             
         </div>
         <div className='flex justify-center items-center  basis-1/4'>
-        <Button style={{'background':'#4f46e5'}} variant="contained" className='w-32 h-10  logout'>Logout</Button>
+        <Button onClick={logMeOut} style={{'background':'#4f46e5'}} variant="contained" className='w-32 h-10  logout'>Logout</Button>
 
             {/* <div className='flex font-medium w-28 h-10 rounded justify-center content-center border-4 border-indigo-700 text-blue-700'>Logout</div> */}
         </div>
