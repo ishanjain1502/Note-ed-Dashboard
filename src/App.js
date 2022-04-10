@@ -6,7 +6,7 @@ import DashboardHome from './Components/dashboard/DashboardHome';
 import VideoPage from './Components/dashboard/VideoPage';
 import Login from "./Components/auth/Login";
 import Register from './Components/auth/Register';
-
+import NotFound from './Components/NotFound';
 
 function App() {
   const [loggedInStatus,setloggedInStatus] = useState(true)
@@ -18,6 +18,7 @@ function App() {
       <Route path='/login' element={<Login loggedInStatus={loggedInStatus} setloggedInStatus={setloggedInStatus}/>}></Route>
       <Route path='/register' element={<Register/>}></Route>
       <Route path='/video/:videoname' element={<VideoPage/>}></Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

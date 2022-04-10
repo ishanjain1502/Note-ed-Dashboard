@@ -8,6 +8,7 @@ import NotesFrame from './NotesFrame';
 
 
 export default function VideoPage(props) {
+    console.log(props, "video page props")
     let { videoname } = useParams();
     let { state } = useLocation();
     let { video_url, video_id } = state;
@@ -19,7 +20,7 @@ export default function VideoPage(props) {
 
     const player = useRef();
     const [timestamp, setTimstamp] = useState();
-    
+
     const fetchNotes = (name) => {
         axios.get(`https://Backend-1.prathameshdukare.repl.co/api/v1/video/${videoname}`, {
             headers: {

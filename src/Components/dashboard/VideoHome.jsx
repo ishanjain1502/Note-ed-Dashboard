@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Video from './Video';
-// import VideoHome from './VideoHome';
-import Header from './Header';
-import Folders from './Folders';
 
-export default function VideoHome(props) {
+export default function VideoHome() {
     const [videos, setVideos] = useState();
-    const { } = props;
 
     useEffect(() => {
         axios.get('https://Backend-1.prathameshdukare.repl.co/api/v1/videos', {
@@ -23,6 +19,7 @@ export default function VideoHome(props) {
             console.log(err);
         })
     }, []);
+    
     return (
         <div className='video-home'>
             <div className=' video-frame flex flex-1 flex-col'>
