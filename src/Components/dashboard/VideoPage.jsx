@@ -1,28 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios';
-import { useParams, useLocation } from 'react-router-dom'
+import { useParams, useLocation  } from 'react-router-dom'
 import "./videopage.css"
 import ReactPlayer from 'react-player/youtube'
 import Header from './Header';
 import NotesFrame from './NotesFrame';
 
-
 export default function VideoPage(props) {
-    console.log(props, "video page props")
-    let { videoname } = useParams();
+    let host = "https://Backend-1.prathameshdukare.repl.co"
+    // let { videoname } = useParams();
     let { state } = useLocation();
-    let { video_url, video_id } = state;
-
-    useEffect(() => {
-        fetchNotes();
-        //eslint-disable-next-line
-    }, [])
-
+    let {video_name, video_url, video_id } = state;
     const player = useRef();
     const [timestamp, setTimstamp] = useState();
 
     const fetchNotes = (name) => {
-        axios.get(`https://Backend-1.prathameshdukare.repl.co/api/v1/video/${videoname}`, {
+        axios.get(`${host}/api/v1/video/${video_name}`, {
             headers: {
                 Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNpeWEiLCJlbWFpbCI6InNpeWFAZ21haWwuY29tIiwidXNlcl9pZCI6IjYyNGIzMDZjMmZkYTE2NDJjNzk2MzE1MiIsImlhdCI6MTY0OTQ0OTEwMX0.dsqSsUuG3_BzyhDQC1YgcAVDWvb-8tlsHRow-OvQmSg'
             }
@@ -40,9 +33,13 @@ export default function VideoPage(props) {
             sec += (time * Math.pow(60, pow));
             pow--;
         });
-        console.log(sec);
+        console.log(sec,"seconds duration");
         return sec;
     }
+    useEffect(() => {
+        fetchNotes();
+        //eslint-disable-next-line
+    }, [])
 
     return (
         <div className='video-page'>

@@ -4,9 +4,10 @@ import Video from './Video';
 
 export default function VideoHome() {
     const [videos, setVideos] = useState();
+    let host = "https://Backend-1.prathameshdukare.repl.co"
 
     useEffect(() => {
-        axios.get('https://Backend-1.prathameshdukare.repl.co/api/v1/videos', {
+        axios.get(`${host}/api/v1/videos`, {
             headers: {
                 Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNpeWEiLCJlbWFpbCI6InNpeWFAZ21haWwuY29tIiwidXNlcl9pZCI6IjYyMzczMDhkZTlmZTZiNmJhYjYxOTU1NiIsImlhdCI6MTY0ODgyNTIyNX0.Eylls1_gGvXmuU8IrI_nTr7VZZWb2Qp4TarfCcF4ulY'
             }
@@ -19,7 +20,7 @@ export default function VideoHome() {
             console.log(err);
         })
     }, []);
-    
+
     return (
         <div className='video-home'>
             <div className=' video-frame flex flex-1 flex-col'>
