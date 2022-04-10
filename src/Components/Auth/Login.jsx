@@ -2,7 +2,6 @@
 import React , {useState} from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
 // import { LockClosedIcon } from '@heroicons/react/solid'
 
 export default function Login(props) {

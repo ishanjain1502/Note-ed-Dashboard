@@ -1,16 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios';
 import { useParams, useLocation } from 'react-router-dom'
-import Header from './Header';
-import Timestamp from './Timestamp';
-
+import "./videopage.css"
 import ReactPlayer from 'react-player/youtube'
+import Header from './Header';
+import NotesFrame from './NotesFrame';
+
 
 export default function VideoPage(props) {
-
     let { videoname } = useParams();
     let { state } = useLocation();
     let { video_url, video_id } = state;
+
     useEffect(() => {
         fetchNotes();
         //eslint-disable-next-line
@@ -18,6 +19,7 @@ export default function VideoPage(props) {
 
     const player = useRef();
     const [timestamp, setTimstamp] = useState();
+    
     const fetchNotes = (name) => {
         axios.get(`https://Backend-1.prathameshdukare.repl.co/api/v1/video/${videoname}`, {
             headers: {
@@ -42,24 +44,21 @@ export default function VideoPage(props) {
     }
 
     return (
-        <>
+        <div className='video-page'>
             <Header></Header>
-            <div className='mt-12 mb-28 mx-64  rounded flex flex-col content-center bg-indigo-300 pt-8'>
 
+            <div className='mt-12 mb-28 mx-64  rounded flex flex-col content-center bg-indigo-300 pt-8'>
                 <ReactPlayer className='self-center' ref={player} controls={true} url={video_url} />
                 <div className='self-start w-full px-32 mt-10'>
                     {timestamp && timestamp.map(timestamp => {
                         const time = Object.keys(timestamp);
                         const seconds = convertToseconds(time[0]);
-                        return <Timestamp timestamp={timestamp} player={player} time={time[0]} seconds={seconds}></Timestamp>
+                        //notes frame 
+                        return <NotesFrame timestamp={timestamp} player={player} time={time[0]} seconds={seconds}></NotesFrame>
                     })}
 
                 </div>
             </div>
-        </>
-
-
+        </div>
     )
-
-
 }

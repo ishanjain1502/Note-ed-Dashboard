@@ -1,0 +1,37 @@
+.codex-editor__redactor {
+  padding-bottom: 0 !important;
+}
+#editorjs {
+  font-size: 1.1rem;
+  padding: 0 5px;
+}
+.save-text-btn {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 39vw;
+  margin: 0 auto;
+}
+a.save-btn {
+  position: relative;
+  bottom: 2.5rem;
+  left: 11rem;
+  font-size: 17px;
+  background-color: #6eef8a;
+  color: black;
+  font-weight: 600;
+  padding: 3px 8px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+a.back-btn {
+  position: relative;
+  bottom: 2.5rem;
+  right: 11rem;
+  font-size: 17px;
+  color: black;
+  font-weight: 600;
+  padding: 3px 8px;
+  text-decoration: none;
+  border-radius: 3px;
+  border: 1px solid black;
+}
