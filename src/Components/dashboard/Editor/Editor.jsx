@@ -5,10 +5,10 @@ import "./editor.css";
 
 
 export default function Editor(props) {
-    const { seteditorActive } = props;
+    const { timeStampData,setisNoteOpen } = props;
+    console.log(timeStampData,"from editor");
     const [Data, setData] = useState({});
     let editor;
-
     const launchEditor = () => {
         editor = new EditorJS(EditorConfigObj);
     }
@@ -21,6 +21,10 @@ export default function Editor(props) {
             console.log('Saving failed: ', error)
         });
     }
+    const backbtnHandler = ()=>{
+        setisNoteOpen(false);
+    }
+
     useEffect(() => {
         launchEditor()
     })
@@ -31,8 +35,10 @@ export default function Editor(props) {
                     <h2>{"Video title here..."}</h2>
                     <h2>{"Timestamp : 1:05 "}</h2>
                 </div>
-                <a className='save-btn' href="#" onClick={saveData}>Save</a>
-                <a className='back-btn' href="#" onClick={() => { seteditorActive(false) }}>Back</a>
+                <div className="btn-container">
+                <p className='back-btn btn-link bg-indigo-300' onClick={backbtnHandler}>Back</p>
+                <p className='save-btn btn-link bg-indigo-300' onClick={saveData}>Save</p>
+                </div>
 
             </div>
 

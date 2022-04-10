@@ -1,61 +1,30 @@
-import React, { useEffect, useState, useRef } from 'react'
-import axios from 'axios';
-import { useParams, useLocation  } from 'react-router-dom'
+import React, { useRef,useState } from 'react'
+import { useParams, useLocation } from 'react-router-dom'
 import "./videopage.css"
 import ReactPlayer from 'react-player/youtube'
 import Header from './Header';
-import NotesFrame from './NotesFrame';
+import NotesContainer from './NotesContainer';
+import Editor from './editor/Editor';
 
 export default function VideoPage(props) {
-    let host = "https://Backend-1.prathameshdukare.repl.co"
-    // let { videoname } = useParams();
+    const [timeStampData,setTimestampData] = useState([]);
     let { state } = useLocation();
-    let {video_name, video_url, video_id } = state;
+    let { video_name, video_url, video_id } = state;
+    // let { videoname } = useParams();
+    const [isNoteOpen, setisNoteOpen] = React.useState(false);
     const player = useRef();
-    const [timestamp, setTimstamp] = useState();
-
-    const fetchNotes = (name) => {
-        axios.get(`${host}/api/v1/video/${video_name}`, {
-            headers: {
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNpeWEiLCJlbWFpbCI6InNpeWFAZ21haWwuY29tIiwidXNlcl9pZCI6IjYyNGIzMDZjMmZkYTE2NDJjNzk2MzE1MiIsImlhdCI6MTY0OTQ0OTEwMX0.dsqSsUuG3_BzyhDQC1YgcAVDWvb-8tlsHRow-OvQmSg'
-            }
-        }).then(data => {
-            console.log(data);
-            setTimstamp(data.data.data);
-        })
-    }
-
-    const convertToseconds = (time) => {
-        const timeArr = time.split(":");
-        let sec = 0;
-        let pow = 2;
-        timeArr.forEach(time => {
-            sec += (time * Math.pow(60, pow));
-            pow--;
-        });
-        console.log(sec,"seconds duration");
-        return sec;
-    }
-    useEffect(() => {
-        fetchNotes();
-        //eslint-disable-next-line
-    }, [])
 
     return (
         <div className='video-page'>
             <Header></Header>
 
-            <div className='mt-12 mb-28 mx-64  rounded flex flex-col content-center bg-indigo-300 pt-8'>
+            <div className='yt-player-container mt-1 mb-1 mx-64  rounded flex flex-col content-center pt-8'>
                 <ReactPlayer className='self-center' ref={player} controls={true} url={video_url} />
-                <div className='self-start w-full px-32 mt-10'>
-                    {timestamp && timestamp.map(timestamp => {
-                        const time = Object.keys(timestamp);
-                        const seconds = convertToseconds(time[0]);
-                        //notes frame 
-                        return <NotesFrame timestamp={timestamp} player={player} time={time[0]} seconds={seconds}></NotesFrame>
-                    })}
+            </div>
 
-                </div>
+            {/* Notes-Container */}
+            <div className="notes-main-container">
+                {!isNoteOpen ? <NotesContainer setTimestampData={setTimestampData} setisNoteOpen={setisNoteOpen} video_id={video_id} video_name={video_name}/> : <Editor timestampData={timeStampData} setisNoteOpen={setisNoteOpen} />}
             </div>
         </div>
     )
