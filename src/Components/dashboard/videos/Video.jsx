@@ -1,6 +1,6 @@
 import React from 'react'
 import { Redirect, useNavigate } from 'react-router-dom'
-import Options from './Options';
+import Options from '../Options';
 
 export default function Video(props) {
     let navigate = useNavigate();
@@ -15,7 +15,7 @@ export default function Video(props) {
             }
         });
     }
-
+    
     return (
         <div className='w-3/4 h-14 rounded-md font-semibold cursor-pointer flex  items-center justify-between pl-2  mb-4 bg-indigo-300'>
             <div onClick={navigateToVideoPage} className='flex'>

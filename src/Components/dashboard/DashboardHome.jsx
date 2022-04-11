@@ -1,5 +1,5 @@
 import React from 'react'
-import VideoHome from './VideoHome';
+import VideoHome from './videos/VideoHome';
 import Header from './Header';
 import Folders from './Folders';
 

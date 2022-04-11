@@ -2,9 +2,9 @@ import React, { useRef,useState } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import "./videopage.css"
 import ReactPlayer from 'react-player/youtube'
-import Header from './Header';
-import NotesContainer from './NotesContainer';
-import Editor from './editor/Editor';
+import Header from '../Header';
+import NotesContainer from '../notes/NotesContainer';
+import Editor from '../editor/Editor';
 
 export default function VideoPage(props) {
     const [timeStampData,setTimestampData] = useState([]);
@@ -23,8 +23,8 @@ export default function VideoPage(props) {
             </div>
 
             {/* Notes-Container */}
-            <div className="notes-main-container">
-                {!isNoteOpen ? <NotesContainer setTimestampData={setTimestampData} setisNoteOpen={setisNoteOpen} video_id={video_id} video_name={video_name}/> : <Editor timestampData={timeStampData} setisNoteOpen={setisNoteOpen} />}
+            <div className="notes-main-container bg-indigo-100">
+                <NotesContainer setTimestampData={setTimestampData} setisNoteOpen={setisNoteOpen} video_id={video_id} video_name={video_name}/>
             </div>
         </div>
     )

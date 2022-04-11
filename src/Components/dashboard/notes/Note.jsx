@@ -1,14 +1,11 @@
 import React from 'react'
-// import ModeCommentIcon from '@mui/icons-material/ModeComment';
-// import ModeEditIcon from '@mui/icons-material/ModeEdit';
-// import DeleteIcon from '@mui/icons-material/Delete';
 import "./notesframe.css";
-import Editor from './editor/Editor';
+import Editor from '../editor/Editor';
 
 export default function Timestamp(props) {
     // const { timestamp, seconds, time, player } = props;
-    const { setTimestampData,setisNoteOpen,timestamp,time} = props;
-    console.log(JSON.parse(timestamp[time]) ,"from note")
+    const { setTimestampData, setisNoteOpen, timestamp, time } = props;
+    // console.log(JSON.parse(timestamp[time]), "from note")
 
     const openNote = () => {
         console.log("openin note...");

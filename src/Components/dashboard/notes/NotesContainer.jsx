@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios';
-import Editor from './editor/Editor';
+import Editor from '../editor/Editor';
 import Note from './Note';
 
 export default function NotesContainer(props) {
