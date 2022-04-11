@@ -4,6 +4,10 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 // import { LockClosedIcon } from '@heroicons/react/solid'
 
+// globle variables 
+const extensionId = 'fkldjphfipjbgmadnppjeebikbhoaelm'
+
+
 export default function Login(props) {
     const navigate = useNavigate();
     const {loggedInStatus,setloggedInStatus} = props;
@@ -35,7 +39,7 @@ export default function Login(props) {
             //sending loggedin info to extension
             console.log("sending msg to extension");
             let authObj =  JSON.stringify({"loggedInStatus":true,authToken:data.token});
-            sendLoggedinInfo({ extensionId: 'fkldjphfipjbgmadnppjeebikbhoaelm', authInfo: authObj})
+            sendLoggedinInfo({ extensionId: extensionId, authInfo: authObj})
 
             // redirect to dashboard
             navigate('/dashboard');

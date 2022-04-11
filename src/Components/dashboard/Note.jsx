@@ -7,8 +7,8 @@ import Editor from './editor/Editor';
 
 export default function Timestamp(props) {
     // const { timestamp, seconds, time, player } = props;
-    const { setTimestampData,setisNoteOpen,timestamp} = props;
-    console.log(timestamp,"from note")
+    const { setTimestampData,setisNoteOpen,timestamp,time} = props;
+    console.log(JSON.parse(timestamp[time]) ,"from note")
 
     const openNote = () => {
         console.log("openin note...");
