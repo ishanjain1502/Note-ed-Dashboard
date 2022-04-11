@@ -2,10 +2,14 @@ import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios';
 import Editor from '../editor/Editor';
 import Note from './Note';
+import Notestamp from './Notestamp';
+import SortTimeline from './SortTimeline';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import './sortTimeLine.css';
 
 export default function NotesContainer(props) {
     let host = "https://Backend-1.prathameshdukare.repl.co"
-    const {setisNoteOpen,setTimestampData, video_name } = props;
+    const { setisNoteOpen, setTimestampData, video_name } = props;
     const [timestamp, setTimstamp] = useState();
 
     const fetchNotes = (name) => {
@@ -17,6 +21,7 @@ export default function NotesContainer(props) {
             setTimstamp(data.data.data);
         })
     }
+    console.log(timestamp);
 
     const convertToseconds = (time) => {
         const timeArr = time.split(":");
@@ -36,14 +41,23 @@ export default function NotesContainer(props) {
     }, [])
 
     return (
-        <div className='notes-container'>
-            <div className='self-start w-full px-5 py-5 mt-5 text-center'>
-                {timestamp && timestamp.map(timestamp => {
-                    const time = Object.keys(timestamp);
-                    const seconds = convertToseconds(time[0]);
-                    //notes frame 
-                    return <Note setTimestampData={setTimestampData} setisNoteOpen={setisNoteOpen} timestamp={timestamp} time={time[0]} seconds={seconds}></Note>
-                })}
+        <div className='notes-main-container'>
+            <div className="notes-timeline-container text-center py-2 my-3 bg-indigo-100">
+                <h1 className='py-2 text-xl'>Video Timeline</h1>
+                <ButtonGroup className='py-2 px-2' variant="contained" aria-label="outlined primary button group">
+                    {timestamp && timestamp.map((time, index) => {
+                        let currentTime = Object.keys(time)[0];
+                        return <Notestamp key={currentTime} time={currentTime} timestamp={time} index={index}></Notestamp>
+                    })}
+                </ButtonGroup>
+                <div className="sort-btn">
+                <SortTimeline/>
+                </div>
+                
+            </div>
+
+            <div className="notes-editor-container bg-indigo-100 py-2 my-3 text-center">
+                <Editor/>
             </div>
         </div>
     )
