@@ -38,7 +38,7 @@ export default function SplitButton() {
     };
 
     return (
-        <React.Fragment className={"sort-timeline-group"}>
+        <React.Fragment>
             <ButtonGroup className='sort-timeline-group' variant="contained" ref={anchorRef} aria-label="split button">
                 <Button onClick={handleClick}>{options[selectedIndex]}</Button>
                 <Button

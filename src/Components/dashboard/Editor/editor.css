@@ -1,31 +1,46 @@
 .codex-editor__redactor {
   padding-bottom: 0 !important;
 }
-#editorjs {
+/* #editorjs {
   font-size: 1.1rem;
   padding: 0 5px;
-}
-.save-btn {
+} */
+/* .save-btn {
   font-size: 16px;
   font-weight: 600;
   padding: 3px 8px;
   border-radius: 3px;
   border: 1px solid black;
-}
-.back-btn {
+} */
+/* .back-btn {
   font-size: 16px;
   font-weight: 600;
   padding: 3px 8px;
   border-radius: 3px;
   border: 1px solid black;
-}
-.btn-link{
+} */
+/* .btn-link {
   cursor: pointer;
-}
-.video-info{
+} */
+/* .video-info {
   font-size: 1.5rem;
-}
-.btn-container{
+} */
+/* .btn-container {
   display: flex;
   justify-content: space-between;
+} */
+.save-notes-btn {
+  position: relative;
+  cursor: pointer;
+    top: -26px;
+    left: 7.5em;
+    background-color: #1976d2;
+    color: white;
+    border-radius: 3px;
+    display: inline-block;
+}
+.video-info {
+  margin: 0 auto;
+  width: 21%;
+  border-radius: 3px;
 }
