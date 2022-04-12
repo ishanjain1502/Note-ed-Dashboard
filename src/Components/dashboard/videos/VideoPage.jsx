@@ -5,12 +5,14 @@ import ReactPlayer from 'react-player/youtube'
 import Header from '../Header';
 import NotesContainer from '../notes/NotesContainer';
 
+
 export default function VideoPage(props) {
     const [timeStampData, setTimestampData] = useState([]);
+    const [isNoteOpen, setisNoteOpen] = React.useState(false);
+    
     let { state } = useLocation();
     let { video_name, video_url, video_id } = state;
     // let { videoname } = useParams();
-    const [isNoteOpen, setisNoteOpen] = React.useState(false);
     const player = useRef();
 
     return (

@@ -27,7 +27,9 @@ export default function Editor({ activeTimestamp }) {
     const saveData = () => {
         editor.save().then((outputData) => {
             console.log(outputData)
-            setData(outputData);
+            // setData(outputData);
+            //TODO: DO API call here only!
+            
         }).catch((error) => {
             console.log('Saving failed: ', error)
         });
