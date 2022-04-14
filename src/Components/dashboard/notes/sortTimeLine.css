@@ -1,0 +1,21 @@
+.sort-timeline-group {
+  /* position: relative !important;
+  left: 9rem !important; */
+  height: 26px;
+  margin: 1rem;
+}
+.red{
+  color: red!important;
+}
+.timeline-btn{
+  margin: 0 4px!important;
+}
+.spinner{
+  text-align: center!important;
+  display: block;
+  margin: 0 auto;
+}
+.MuiBox-root.css-k008qs {
+  display: block;
+  margin: 0 auto;
+}

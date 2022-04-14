@@ -2,14 +2,17 @@
 import React , {useState} from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
 // import { LockClosedIcon } from '@heroicons/react/solid'
+
+// globle variables 
+const extensionId = 'fkldjphfipjbgmadnppjeebikbhoaelm'
+
 
 export default function Login(props) {
     const navigate = useNavigate();
     const {loggedInStatus,setloggedInStatus} = props;
-    const [email,setEmail] = useState('siya@gmail.com');
-    const [password,setPassword] = useState('siya');
+    const [email,setEmail] = useState('');
+    const [password,setPassword] = useState('');
 
     const sendLoggedinInfo = ({ extensionId, authInfo})=>{
         chrome.runtime.sendMessage(extensionId, { authInfo }, response => {
@@ -19,6 +22,12 @@ export default function Login(props) {
             }
             console.log(response)
           });
+    }
+    const onEmailChange = (e)=>{
+        setEmail(e.target.value);
+    }
+    const onPassChange = (e)=>{
+        setPassword(e.target.value);
     }
 
     const loginUser = (e) => {
@@ -34,8 +43,9 @@ export default function Login(props) {
             setloggedInStatus(true);
 
             //sending loggedin info to extension
+            console.log("sending msg to extension");
             let authObj =  JSON.stringify({"loggedInStatus":true,authToken:data.token});
-            sendLoggedinInfo({ extensionId: 'fkldjphfipjbgmadnppjeebikbhoaelm', authInfo: authObj})
+            sendLoggedinInfo({ extensionId: extensionId, authInfo: authObj})
 
             // redirect to dashboard
             navigate('/dashboard');
@@ -66,6 +76,8 @@ export default function Login(props) {
                                 <input
                                     id="email-address"
                                     name="email"
+                                    value={email}
+                                    onChange={onEmailChange}
                                     type="email"
                                     autoComplete="email"
                                     required
@@ -80,6 +92,8 @@ export default function Login(props) {
                                 <input
                                     id="password"
                                     name="password"
+                                    value={password}
+                                    onChange={onPassChange}
                                     type="password"
                                     autoComplete="current-password"
                                     required
