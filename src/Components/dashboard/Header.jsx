@@ -1,11 +1,11 @@
 /*global chrome*/
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
-
-import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import { Button } from '@mui/material';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavItem from './NavItem';
-import {Button} from '@mui/material'
+
 
 export default function Header() {
     const navigate = useNavigate();
@@ -36,7 +36,7 @@ export default function Header() {
   return (
     <div className='flex pt-4 bg-indigo-200 h-24'>
         <div className=' flex items-center basis-1/4'>
-            <h1 className='main-heading text-3xl text-indigo-600 ml-4'>Note-ed</h1>
+            <h1 className='main-heading text-3xl text-indigo-600 ml-24'>Note-ed</h1>
         </div>
         <div className='text-gray-500 text-base font-semibold text-base basis-1/2 flex items-center justify-center'>
             <NavItem icon={<DashboardIcon/>} title={"Dashboard"} link='\dashboard'></NavItem>

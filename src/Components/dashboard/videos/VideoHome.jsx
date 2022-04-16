@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Video from './Video';
 
 const siyasToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNpeWEiLCJlbWFpbCI6InNpeWFAZ21haWwuY29tIiwidXNlcl9pZCI6IjYyMzczMDhkZTlmZTZiNmJhYjYxOTU1NiIsImlhdCI6MTY0ODgyNTIyNX0.Eylls1_gGvXmuU8IrI_nTr7VZZWb2Qp4TarfCcF4ulY"
@@ -26,9 +26,14 @@ export default function VideoHome() {
 
     return (
         <div className='video-home'>
-            <div className=' video-frame flex flex-1 flex-col'>
+            <div className=' video-frame inline-grid grid-cols-1 md:inline-grid md:grid-cols-3 md:gap-1  '>
                 {videos && videos.map(video => {
-                    return <Video video={video}></Video>
+                    return (
+                        <div>
+                    <Video video={video}></Video>
+                        
+                    </div>
+                    )
                 })}
             </div>
         </div>
