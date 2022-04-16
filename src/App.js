@@ -4,8 +4,8 @@ import {Route,Routes} from 'react-router-dom';
 import HomePage from './Components/home/HomePage';
 import DashboardHome from './Components/dashboard/DashboardHome';
 import VideoPage from './Components/dashboard/videos/VideoPage';
-import Login from "./Components/auth/Login";
-import Register from './Components/auth/Register';
+import Login from "./Components/Auth/Login";
+import Register from './Components/Auth/Register';
 import NotFound from './Components/NotFound';
 
 function App() {

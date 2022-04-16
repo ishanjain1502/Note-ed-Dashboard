@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios';
-import Editor from '../editor/Editor';
+import Editor from '../Editor/Editor';
 import Notestamp from './Notestamp';
 import SortTimeline from './SortTimeline';
 import ButtonGroup from '@mui/material/ButtonGroup';
