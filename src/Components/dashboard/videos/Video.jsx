@@ -1,5 +1,6 @@
-import React from 'react'
-import { Redirect, useNavigate } from 'react-router-dom'
+import React from 'react';
+import ReactPlayer from 'react-player';
+import { useNavigate } from 'react-router-dom';
 import Options from '../Options';
 
 export default function Video(props) {
@@ -17,9 +18,10 @@ export default function Video(props) {
     }
     
     return (
-        <div className='w-3/4 h-14 rounded-md font-semibold cursor-pointer flex  items-center justify-between pl-2  mb-4 bg-indigo-300'>
-            <div onClick={navigateToVideoPage} className='flex'>
-                <p className='text-gray-50 '>{video_name}</p>
+        <div className='w-5/6 h-64 rounded-md font-semibold cursor-pointer items-center justify-between p-2  m-2 bg-indigo-300 hover:scale-110'>
+            <div onClick={navigateToVideoPage} className=''>
+                <ReactPlayer url={video_url} height='280' width='360' ></ReactPlayer>
+                <p className='text-gray-50 text-ellipsis overflow-hidden '>{video_name}</p>
             </div>
             <Options></Options>
         </div>

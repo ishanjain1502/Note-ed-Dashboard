@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import {Route,Routes} from 'react-router-dom';
-import HomePage from './Components/home/HomePage';
-import DashboardHome from './Components/dashboard/DashboardHome';
-import VideoPage from './Components/dashboard/videos/VideoPage';
 import Login from "./Components/Auth/Login";
 import Register from './Components/Auth/Register';
+import DashboardHome from './Components/dashboard/DashboardHome';
+import VideoPage from './Components/dashboard/videos/VideoPage';
+import HomePage from './Components/home/HomePage';
 import NotFound from './Components/NotFound';
 
 function App() {
