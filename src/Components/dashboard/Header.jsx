@@ -25,7 +25,7 @@ export default function Header() {
 
         // sending logged out info to extension
         let authObj =  JSON.stringify({"loggedInStatus":false,"authToken":null});
-        sendLoggedOutInfo({ extensionId: 'fkldjphfipjbgmadnppjeebikbhoaelm', authInfo: authObj})
+        sendLoggedOutInfo({ extensionId: 'jklnlkhjnomickibcdjofabgbhadpkfm', authInfo: authObj})
         localStorage.removeItem('token');
         // setloggedInStatus(false); 
 
