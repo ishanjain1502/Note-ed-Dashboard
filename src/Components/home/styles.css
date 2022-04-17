@@ -10,6 +10,7 @@
   body {
 	padding: 0;
 	margin: 0;
+	background-color: rgb(197, 241, 250);
   }
   
   #stripes {
@@ -50,3 +51,36 @@
 	grid-row: 4;
 	background: var(--fifth);
   } 
+
+  .card{
+	position: absolute;
+	top: 20%;
+	left:70%;
+	
+	padding: 3rem;
+	border-radius: 20px;
+	color: rgb(9, 0, 0);
+	font-size: 18px;
+	background: rgba(101, 218, 233, 0.3);
+	box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);
+	border-right: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	backdrop-filter: blur(10px);
+	transition: .5s ease;
+	z-index: 10;
+  }
+
+  .loginbtn{
+	  position: absolute;
+	  padding: 1.5rem;
+	  background-color: rgba(233, 138, 101, 0.8);
+	  width: fit-content;
+	  border-radius: 20px;
+	  text-align: center;
+	  -webkit-transition-duration: 0.4s; /* Safari */
+	  transition-duration: 0.4s;
+	  text-decoration: none;
+	  overflow: hidden;
+	  cursor: pointer;
+	  left: 40%;
+  }
