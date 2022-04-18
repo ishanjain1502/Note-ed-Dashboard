@@ -13,6 +13,9 @@ export default function HomePage() {
         <span></span>
         <span></span>
     </div>
+    <div id='glass'>
+            
+    </div>
     
     <br/>
     
