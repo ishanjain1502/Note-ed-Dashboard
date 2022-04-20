@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from './HomeHeader';
 import './styles.css';
 
 export default function HomePage() {
@@ -11,7 +12,9 @@ export default function HomePage() {
 
   // importScript("gradient.js");
   return (
-    <>
+    <div className=''>
+    
+    <Header/>
      <div id="stripes">
         <span></span>
         <span></span>
@@ -23,7 +26,7 @@ export default function HomePage() {
       <h1 className='font-serif text-7xl'>Note</h1>
       <br/>
 
-      <div className="flex">
+      <div className="flex shadow-xl">
         <p className='font-serif text-7xl'>Ed</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         <div className='h-16' >
           <img src="https://img.icons8.com/color/96/000000/pencil--v1.png"/>
@@ -36,7 +39,7 @@ export default function HomePage() {
       <button onClick={toLogin}>Resume your Note Making</button>
     </div>
 
-    </>
+    </div>
 
   )
 }
