@@ -18,7 +18,7 @@ export default function Video(props) {
     }
     
     return (
-        <div className='w-5/6 h-64 rounded-md font-semibold cursor-pointer items-center justify-between p-2  m-2 bg-indigo-300 hover:scale-110'>
+        <div className='w-5/6 h-64 rounded-md font-semibold cursor-pointer items-center justify-between p-2  m-2 bg-new-green hover:scale-110'>
             <div onClick={navigateToVideoPage} className=''>
                 <ReactPlayer url={video_url} height='280' width='360' ></ReactPlayer>
                 <p className='text-gray-50 text-ellipsis overflow-hidden '>{video_name}</p>

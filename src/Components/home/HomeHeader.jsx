@@ -8,7 +8,7 @@ const HomeHeder = () => {
             <div className='absolute left-16 top-6' >Note-Ed</div>
             <button className='absolute right-24 top-3 p-2 px-6 md:p-3 md:px-8 shadow-md text-xl md:text-2xl text-white rounded-full bg-cyan-600' >Download Extension</button>
         </nav>
-
+     
 
     </div>
   )

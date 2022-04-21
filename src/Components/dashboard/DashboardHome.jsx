@@ -12,6 +12,9 @@ export default function VideoList() {
             <main className='flex mt-16'>
                 <div className=' folders-component ml-8 mr-8 basis-1/4'>
                     <Folders />
+                    <section className='w-52 h-auto bg-new-green' >s
+                       
+                    </section>
                 </div>
                 <VideoHome />
             </main>

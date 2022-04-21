@@ -9,6 +9,9 @@ export default function HomePage() {
   const toLogin = () => {
     navigate('/login')
   }
+  const toRegister = () => {
+    navigate('/register')
+  }
 
   // importScript("gradient.js");
   return (
@@ -29,16 +32,19 @@ export default function HomePage() {
       <div className="flex shadow-xl">
         <p className='font-serif text-7xl'>Ed</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         <div className='h-16' >
-          <img src="https://img.icons8.com/color/96/000000/pencil--v1.png"/>
+          {/* <img src="https://img.icons8.com/color/96/000000/pencil--v1.png"/> */}
         </div>
       </div>
     </div>
     <br/>
     
-    <div className='loginbtn font-serif text-2xl'>
-      <button onClick={toLogin}>Resume your Note Making</button>
+    {/* <div className='loginbtn font-serif text-2xl'> /*}
+      {/* <button onClick={toLogin}>Resume your Note Making</button> */}
+    {/* </div> */} 
+    <div className='flex justify-center' >
+      <button onClick={toRegister} className='  p-3 ' >Start your Journey with us</button>
+      {/* <button onClick={toLogin} >Login to Dashboard</button>  */} 
     </div>
-
     </div>
 
   )
