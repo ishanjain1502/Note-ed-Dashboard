@@ -27,7 +27,7 @@ export default function Folder(props) {
       
       <ListItemButton style={{"background-image" : "linear-gradient(to right ,#2196F3, #3F51B5)" , "border-radius" : "25px", "color" : "white"}} onClick={handleClick}>
         {/* <ListItemIcon style={{"background-image" : "linear-gradient(to right ,#2196F3, #3F51B5)"}} > */}
-          <FolderIcon style={{"background-color" : "rgb(0,130,173)" , "color": "white" , "margin-right" : "12px"}}  />
+          <FolderIcon style={{ "color": "white" , "margin-right" : "12px"}}  />
         {/* </ListItemIcon> */}
         <ListItemText primary={props.foldername} />
         {open ? <ExpandLess /> : <ExpandMore />}
