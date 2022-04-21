@@ -9,9 +9,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import React, { useState } from 'react';
 
-
-
-
 export default function Folder(props) {
   const [open, setOpen] = useState(true);
 
