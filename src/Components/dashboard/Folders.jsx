@@ -15,7 +15,7 @@ export default function Folders() {
   let foldername="Default";
     let videos=["video1","video2"]
   return (
-    <>
+    <div className='max-w-1/5' >
         <Folder foldername={foldername} videos={videos}></Folder>
         <ListItem disablePadding>
             <ListItemButton>
@@ -26,14 +26,14 @@ export default function Folders() {
             </ListItemButton>
           </ListItem>
 
-        {
+        {/* {
           videos.map((video) => (
             <div>
                 {video}
             </div>
           ))
-        }
+        } */}
 
-    </>
+    </div>
   )
 }

@@ -14,6 +14,10 @@ export default function Header() {
       navigate('/profile')
     }
 
+    const toHome = () => {
+      navigate('/dashboard')
+    }
+
     const searchQuery= (query) => {
         let token = localStorage.getItem('token')
         axios.post('api/v1/search/videos/name?=xyz', {
@@ -31,22 +35,24 @@ export default function Header() {
 
   return (
       <>
-    <nav className='p-5 flex justify-between bg-new-green ' >
+    <nav className='p-5 flex justify-between  bg-gradient-to-r from-indigo-500 to-blue-500 ' >
         {/* <MenuIcon/> */}
         <div>
-        <button>
-            <MenuIcon style={{ color: "white" }}/>
+        <button className='' >
+            <MenuIcon style={{ color: "white" , "margin-bottom" : "7px"}}/>
         </button>
         <image src={icon} alt='logo' /> 
-        <span className='text-white text-2xl'>
+        <span className='text-white text-2xl '>
             &nbsp;&nbsp;&nbsp;
-         Noted
+            <span className=' w-8 h-4 pt-16' style={{"background-image" : "url(https://github.com/sasta-notion/Note-Ed-Chrome-Extension/blob/master/src/assets/img/icon-34.png)"}} >  </span>
+         <button onClick={toHome} > Noted</button>
         </span>
         </div>
         
         <div className='w-2/3'>
-            <input className='h-8 w-3/4 '
+            <input className='h-8 w-3/4 p-3'
                 value={query}
+                placeholder='   Search Videos here'
                 onChange={(e)=> {setQuery(e.target.value)}}
             />
             <button className='px-4 bg-zinc-300 h-8'
@@ -56,7 +62,7 @@ export default function Header() {
         <span className='profile w-8 text-xl '>
           <button
           onClick={toProfile} >
-          <AccountCircleIcon style={{color: "white"}} />
+          <AccountCircleIcon style={{color: "white" , "transform" : "scale(1.5)"}} />
           </button>
           
         </span>

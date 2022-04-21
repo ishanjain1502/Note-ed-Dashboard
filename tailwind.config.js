@@ -6,7 +6,9 @@ module.exports = {
     extend: {
       colors: {
         'trans-col' : 'rgba(255, 255, 255, 0.6)' ,
-        'new-green': 'rgb(0,130,173)',
+        'new-green': 'rgba(0,130,173, 0.6)',
+        'new-blue': "",
+        'light-green' : '#EBFCFF'
       },
     },
   },

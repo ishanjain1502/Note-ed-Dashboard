@@ -9,10 +9,9 @@ export default function VideoList() {
             <Navbar/>
            
             <main className='flex mt-16'>
-                <div className=' folders-component ml-8 mr-8 basis-1/4'>
+                <div className=' folders-component ml-8 mr-8 basis-1/6'>
                     <Folders />
-                    <section className='w-52 h-auto bg-new-green' >s
-                       
+                    <section className='w-52 h-auto bg-new-green' >                       
                     </section>
                 </div>
                 <VideoHome />
