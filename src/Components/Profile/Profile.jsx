@@ -4,12 +4,14 @@ import Navbar from '../NavBar/Navbar';
 import EditInfo from './EditInfo';
 import { useNavigate } from 'react-router-dom';
 import StatsBox from './StatsBox';
+import axios from 'axios';
 
 export default function Profile() {
     const navigate = useNavigate();
     const [open,setOpen]=useState(false);
     const [modalType,setModalType]=useState(" ");
     const [data,setData]=useState({});
+    const [stats,setStats]=useState({});
     const handleOpen=(e)=>{
        
         setModalType(e.target.value);
@@ -45,9 +47,23 @@ export default function Profile() {
             }
             console.log(response)
           });
+
+    }
+    
+    const getStats=()=>{
+        const token=localStorage.getItem('token');
+        axios.get(`http://localhost:8000/api/v1/getstats`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then(data=>{
+            setStats(data.data.data);
+            console.log(data.data.data);
+        })
     }
 
     useEffect(()=>{
+        getStats();
         const info={
             username:localStorage.getItem('username'),
             email:localStorage.getItem('email')
@@ -87,8 +103,8 @@ export default function Profile() {
         <div className="flex flex-col items-center flex-1 justify-center">
             <h1 class="font-bold text-lg mb-3 sm:text-[22px] mb-3">Stats</h1>
             <div className='flex w-2/4'>
-                    <StatsBox title={"Videos"} stats={"40"}></StatsBox>
-                    <StatsBox title={"Folders"} stats={"30"}></StatsBox>
+                    <StatsBox title={"Videos"} stats={stats && stats.videos}></StatsBox>
+                    <StatsBox title={"Folders"} stats={stats && stats.folders}></StatsBox>
 
             </div>
             </div>

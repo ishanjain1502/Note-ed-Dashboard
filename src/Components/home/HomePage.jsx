@@ -22,8 +22,8 @@ export default function HomePage() {
             <section className="navbar">
                 <div className="hero"><a href="#">Noted</a></div>
                 <div className="nav-items flex">
-                    <a href="#" className="nav-item get-started">Get started</a>
-                    <a href="#" className="nav-item go-to-dashboard">Dashboard</a>
+                    <a href="/register" className="nav-item get-started">Get started</a>
+                    <a href="/dashboard" className="nav-item go-to-dashboard">Dashboard</a>
                 </div>
             </section>
 

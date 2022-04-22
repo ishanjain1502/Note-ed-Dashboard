@@ -56,7 +56,7 @@ export default function Header() {
                 onChange={(e)=> {setQuery(e.target.value)}}
             />
             <button className='px-4 bg-zinc-300 h-8'
-                onClick={searchQuery(query)}
+                onClick={()=>{searchQuery(query)}}
             > <SearchIcon style={{ color: "white" }}/> </button>
         </div>
         <span className='profile w-8 text-xl '>
