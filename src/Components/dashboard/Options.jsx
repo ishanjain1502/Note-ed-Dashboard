@@ -9,6 +9,7 @@ import Modal from '@mui/material/Modal';
 import FolderDropdown from './FoldersDropdown';
 import axios from 'axios';
 export default function Options(props) {
+  const token=localStorage.getItem('token').toString();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [modalOpen,setModalOpen]=React.useState(false);
   const [newFolderName,setFolderName]=React.useState();
@@ -39,7 +40,7 @@ const submitChangeFolder=()=>{
     console.log("folder name is null");
     return;
   }
-  const token=localStorage.getItem('token').toString();
+  
   axios.post(`http://localhost:8000/api/v1/video/changefolder`,{
     video_id:props.video_id,
     folder_name:newFolderName
@@ -69,7 +70,7 @@ const submitTitle=()=>{
     console.log("video name is null");
     return;
   }
-  const token=localStorage.getItem('token').toString();
+  
   axios.post(`http://localhost:8000/api/v1/video/editname`,{
     video_id:props.video_id,
     new_video_name:title
@@ -85,6 +86,30 @@ const submitTitle=()=>{
        if(data.status===200){
          handleModalClose();
          props.updateVideoName(title);
+       }
+       else{
+         console.log(data);
+       }
+     }).catch(err=>{
+       console.log(err);
+     })
+}
+
+
+const deleteVideo=()=>{
+  axios.post(`http://localhost:8000/api/v1/video/delete`,{
+    video_id:props.video_id,
+    
+   },{
+        
+         headers: {
+             Authorization: `Bearer ${token}`
+         },
+         
+         
+     }).then(data=>{
+       if(data.status===200){
+         props.deleteVideoFromArray(props.video_id);
        }
        else{
          console.log(data);
@@ -124,7 +149,10 @@ const submitTitle=()=>{
           handleClose();
           handleModalOpen(e);
         }}>Edit Title</MenuItem>
-        <MenuItem onClick={handleClose}>Delete</MenuItem>
+        <MenuItem onClick={()=>{
+          handleClose();
+          deleteVideo();
+        }}>Delete</MenuItem>
       </Menu>
 
       

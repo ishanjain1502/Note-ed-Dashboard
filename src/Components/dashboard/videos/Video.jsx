@@ -30,7 +30,7 @@ export default function Video(props) {
                 } */}
                 <p className='text-new-green text-ellipsis overflow-hidden '>{updatedVideoName || video_name}</p>
             </div>
-            <Options video_id={video_id} updateVideoName={updateVideoName}></Options>
+            <Options video_id={video_id} updateVideoName={updateVideoName} deleteVideoFromArray={props.deleteVideoFromArray}></Options>
 
 
            
