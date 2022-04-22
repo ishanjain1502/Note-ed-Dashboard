@@ -8,11 +8,6 @@ import Notestamp from './Notestamp';
 import SortTimeline from './SortTimeline';
 import './sortTimeLine.css';
 
-
-const siyasToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNpeWEiLCJlbWFpbCI6InNpeWFAZ21haWwuY29tIiwidXNlcl9pZCI6IjYyMzczMDhkZTlmZTZiNmJhYjYxOTU1NiIsImlhdCI6MTY0ODgyNTIyNX0.Eylls1_gGvXmuU8IrI_nTr7VZZWb2Qp4TarfCcF4ulY"
-const ramsToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlJhbSIsImVtYWlsIjoicmFtQGdtYWlsLmNvbSIsInVzZXJfaWQiOiI2MjU1M2U0MzgzMWEyYjE4N2IyZWEyZDciLCJpYXQiOjE2NDk3NTM2Njd9.jcOqw_X7Ve7KyL3SZcfVWQN4xDfYeOFE4KSbep1P3f0"
-
-
 export default function NotesContainer(props) {
     const [timestamp, setTimstamp] = useState(null);
     const [activeTimestamp, setActiveTimestamp] = useState({
@@ -29,14 +24,16 @@ export default function NotesContainer(props) {
       });
     const { video_name,video_id } = props;
 
-    let host = "https://Backend-1.prathameshdukare.repl.co"
+    let host = "http://localhost:8000"
 
     const fetchNotes = () => {
+        const token=localStorage.getItem('token').toString();
         axios.get(`${host}/api/v1/video/${video_id}`, {
             headers: {
-                Authorization: `Bearer ${ramsToken}`
+                Authorization: `Bearer ${token}`
             }
         }).then(data => {
+            console.log(data);
             setTimstamp(data.data.data);
             setActiveTimestamp(data.data.data[0]);
         })
