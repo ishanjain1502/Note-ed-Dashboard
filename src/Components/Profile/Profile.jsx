@@ -3,11 +3,13 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../NavBar/Navbar';
 import EditInfo from './EditInfo';
 import StatsBox from './StatsBox';
+import axios from 'axios';
 
 export default function Profile() {
     const [open,setOpen]=useState(false);
     const [modalType,setModalType]=useState(" ");
     const [data,setData]=useState({});
+    const [stats,setStats]=useState({});
     const handleOpen=(e)=>{
        
         setModalType(e.target.value);
@@ -19,7 +21,19 @@ export default function Profile() {
         setOpen(false);
     }
 
+    const getStats=()=>{
+        const token=localStorage.getItem('token');
+        axios.get(`http://localhost:8000/api/v1/getstats`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then(data=>{
+            console.log(data);
+        })
+    }
+
     useEffect(()=>{
+        getStats();
         const info={
             username:localStorage.getItem('username'),
             email:localStorage.getItem('email')
