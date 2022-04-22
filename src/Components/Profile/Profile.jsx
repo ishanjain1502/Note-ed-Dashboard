@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../NavBar/Navbar';
 import EditInfo from './EditInfo';
+import { useNavigate } from 'react-router-dom';
 import StatsBox from './StatsBox';
 
 export default function Profile() {
+    const navigate = useNavigate();
     const [open,setOpen]=useState(false);
     const [modalType,setModalType]=useState(" ");
     const [data,setData]=useState({});
@@ -17,6 +19,32 @@ export default function Profile() {
     }
     const handleClose=()=>{
         setOpen(false);
+    }
+
+
+    const logMeOut = ()=>{
+        console.log("loggging out");
+
+        // sending logged out info to extension
+        let authObj =  JSON.stringify({"loggedInStatus":false,"authToken":null});
+        sendLoggedOutInfo({ extensionId: 'jklnlkhjnomickibcdjofabgbhadpkfm', authInfo: authObj})
+        localStorage.removeItem('token');
+        // setloggedInStatus(false); 
+
+        // redirect to login
+        navigate('/login');
+    }
+
+
+    const sendLoggedOutInfo = ({ extensionId, authInfo})=>{
+        // eslint-disable-next-line no-undef
+        chrome.runtime.sendMessage(extensionId, { authInfo }, response => {
+            if (!response.success) {
+              console.log('error sending message', response);
+              return response;
+            }
+            console.log(response)
+          });
     }
 
     useEffect(()=>{
@@ -53,7 +81,7 @@ export default function Profile() {
             <button onClick={(e)=>{
                 handleOpen(e);
             }} value="changepassword" class="px-4 py-2 mb-4 text-xs w-80 font-semibold text-blue-400 border border-blue-400 rounded-md sm:text-sm hover:bg-gray-100">Change Password</button>
-            <button class="px-4 py-2 mb-4 text-xs w-80 font-semibold text-red-400 border border-red-400 rounded-md sm:text-sm hover:bg-gray-100">Logout</button>
+            <button class="px-4 py-2 mb-4 text-xs w-80 font-semibold text-red-400 border border-red-400 rounded-md sm:text-sm hover:bg-gray-100" onClick={logMeOut}>Logout</button>
         </div>
 
         <div className="flex flex-col items-center flex-1 justify-center">
