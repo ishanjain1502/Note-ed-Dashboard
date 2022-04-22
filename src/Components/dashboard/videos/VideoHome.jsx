@@ -22,13 +22,21 @@ export default function VideoHome() {
         })
     }, []);
 
+    const deleteVideoFromArray=(video_id)=>{
+        setVideos(videos=>{
+            return videos.filter(video=>{
+                return video.video_id!==video_id
+            })
+        })
+    }
+
     return (
         <div className='video-home'>
             <div className=' video-frame inline-grid grid-cols-1 md:inline-grid md:grid-cols-3 md:gap-1  '>
                 {videos && videos.map(video => {
                     return (
                         <div>
-                    <Video video={video}></Video>
+                    <Video video={video} deleteVideoFromArray={deleteVideoFromArray}></Video>
                         
                     </div>
                     )
