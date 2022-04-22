@@ -3,7 +3,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'trans-col' : 'rgba(255, 255, 255, 0.6)' ,
+        'new-green': 'rgba(0,130,173, 0.6)',
+        'new-blue': "",
+        'light-green' : '#EBFCFF'
+      },
+    },
   },
   plugins: [],
 }

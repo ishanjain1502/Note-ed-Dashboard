@@ -1,18 +1,20 @@
 /*global chrome*/
-import React , {useState} from 'react'
 import axios from 'axios';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import { LockClosedIcon } from '@heroicons/react/solid'
 
 // globle variables 
 const extensionId = 'jklnlkhjnomickibcdjofabgbhadpkfm'
-
 
 export default function Login(props) {
     const navigate = useNavigate();
     const {loggedInStatus,setloggedInStatus} = props;
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+    const notify = () => toast("Welcome back 😇 "); 
 
     const sendLoggedinInfo = ({ extensionId, authInfo})=>{
         chrome.runtime.sendMessage(extensionId, { authInfo }, response => {

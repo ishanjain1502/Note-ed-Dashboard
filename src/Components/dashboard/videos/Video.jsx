@@ -18,10 +18,13 @@ export default function Video(props) {
     }
     
     return (
-        <div className='w-5/6 h-64 rounded-md font-semibold cursor-pointer items-center justify-between p-2  m-2 bg-indigo-300 hover:scale-110'>
+        <div className='w-6/7 h-64 rounded-md font-semibold cursor-pointer items-center justify-between p-2 drop-shadow-md m-2 bg-white  hover:drop-shadow-2xl hover:bg-light-green hover:scale-105'>
             <div onClick={navigateToVideoPage} className=''>
-                <ReactPlayer url={video_url} height='280' width='360' ></ReactPlayer>
-                <p className='text-gray-50 text-ellipsis overflow-hidden '>{video_name}</p>
+                <ReactPlayer url={video_url} height='320' width='480' ></ReactPlayer>
+                {/* {
+                    video_name = video_name.slice(0 , 40) + (video_name.length > 20 ? ". . ." : " ")
+                } */}
+                <p className='text-new-green text-ellipsis overflow-hidden '>{video_name}</p>
             </div>
             <Options></Options>
         </div>
