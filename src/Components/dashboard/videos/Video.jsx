@@ -27,6 +27,9 @@ export default function Video(props) {
                 <p className='text-new-green text-ellipsis overflow-hidden '>{video_name}</p>
             </div>
             <Options></Options>
+
+
+           
         </div>
     )
 }
