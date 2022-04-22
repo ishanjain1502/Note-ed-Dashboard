@@ -3,7 +3,7 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Editor from '../editor/Editor';
+import Editor from '../Editor/Editor';
 import Notestamp from './Notestamp';
 import SortTimeline from './SortTimeline';
 import './sortTimeLine.css';
