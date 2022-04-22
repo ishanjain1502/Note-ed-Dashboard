@@ -18,6 +18,7 @@ function App() {
       <Route path='/dashboard' element={<DashboardHome/>}></Route>
       <Route path='/login' element={<Login loggedInStatus={loggedInStatus} setloggedInStatus={setloggedInStatus}/>}></Route>
       <Route path='/register' element={<Register/>}></Route>
+      <Route path='/profile' element={<Profile/>}></Route>
       <Route path='/video/:videoname' element={<VideoPage/>}></Route>
       <Route path='/profile' element={<Profile/>}></Route>
       <Route path="*" element={<NotFound />} />

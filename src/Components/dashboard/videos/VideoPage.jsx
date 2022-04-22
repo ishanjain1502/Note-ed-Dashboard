@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react'
-import { useParams, useLocation } from 'react-router-dom'
-import "./videopage.css"
-import ReactPlayer from 'react-player/youtube'
-import Header from '../Header';
+import React, { useRef, useState } from 'react';
+import ReactPlayer from 'react-player/youtube';
+import { useLocation } from 'react-router-dom';
+import Header from '../../NavBar/Navbar';
 import NotesContainer from '../notes/NotesContainer';
+import "./videopage.css";
 
 
 export default function VideoPage(props) {
