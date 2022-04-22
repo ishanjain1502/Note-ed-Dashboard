@@ -28,7 +28,8 @@ export default function Profile() {
                 Authorization: `Bearer ${token}`
             }
         }).then(data=>{
-            console.log(data);
+            setStats(data.data.data);
+            console.log(data.data.data);
         })
     }
 
@@ -73,8 +74,8 @@ export default function Profile() {
         <div className="flex flex-col items-center flex-1 justify-center">
             <h1 class="font-bold text-lg mb-3 sm:text-[22px] mb-3">Stats</h1>
             <div className='flex w-2/4'>
-                    <StatsBox title={"Videos"} stats={"40"}></StatsBox>
-                    <StatsBox title={"Folders"} stats={"30"}></StatsBox>
+                    <StatsBox title={"Videos"} stats={stats && stats.videos}></StatsBox>
+                    <StatsBox title={"Folders"} stats={stats && stats.folders}></StatsBox>
 
             </div>
             </div>
