@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from 'react'
-import Avatar from './Avatar';
-import StatsBox from './StatsBox';
-import InfoDisplay from './InfoDisplay';
+
+import React, { useEffect, useState } from 'react';
+import Navbar from '../NavBar/Navbar';
 import EditInfo from './EditInfo';
-import { info } from 'autoprefixer';
+import StatsBox from './StatsBox';
+
 export default function Profile() {
     const [open,setOpen]=useState(false);
     const [modalType,setModalType]=useState(" ");
@@ -33,11 +33,11 @@ export default function Profile() {
     
   return (
     <div>
-        
-        <div class="m-auto bg-cover bg-no-repeat bg-center w-full h-[300px]" style={{"background-image":"url(https://codedamn.com/assets/cover-image.svg)"}}></div>
+
+        <Navbar/>
+        <div className="m-auto bg-cover bg-no-repeat bg-center w-full h-[300px]" style={{"background-image":"url(https://codedamn.com/assets/cover-image.svg)"}}></div>
         <main className="pl-14">
-            
-        <Avatar></Avatar>
+
         <div className='flex'>
 
         <div className='flex flex-col items-center w-80'>

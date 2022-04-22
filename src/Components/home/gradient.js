@@ -1,6 +1,6 @@
 
 /*
-*   Stripe WebGl Gradient Animation by Stripe.com
+*   Stripe WebGl Gradient Animation
 *   ScrollObserver functionality to disable animation when not scrolled into view has been disabled and 
 *   commented out for now.
 */
@@ -357,7 +357,7 @@ function normalizeColor(hexCode) {
                 value: 0
             }),
             u_shadow_power: new this.minigl.Uniform({
-                value: 10
+                value: 5
             }),
             u_darken_top: new this.minigl.Uniform({
                 value: "" === this.el.dataset.jsDarkenTop ? 1 : 0
@@ -516,10 +516,5 @@ function normalizeColor(hexCode) {
   * Gradient.toggleColor(index)
   * Gradient.updateFrequency(freq)
   */
-  
-  
-  
-  
-  
-  
-  
+  var gradient = new Gradient();
+      gradient.initGradient("#gradient-canvas");
