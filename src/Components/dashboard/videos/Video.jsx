@@ -16,9 +16,11 @@ export default function Video(props) {
             }
         });
     }
+
+    
     
     return (
-        <div className='w-6/7 h-64 rounded-md font-semibold cursor-pointer items-center justify-between p-2 drop-shadow-md m-2 bg-white  hover:drop-shadow-2xl hover:bg-light-green hover:scale-105'>
+        <div className='w-6/7 h-64 rounded-md font-semibold cursor-pointer items-center justify-between p-2 drop-shadow-md m-2 bg-white  hover:drop-shadow-2xl hover:bg-new-green hover:scale-105'>
             <div onClick={navigateToVideoPage} className=''>
                 <ReactPlayer url={video_url} height='320' width='480' ></ReactPlayer>
                 {/* {
