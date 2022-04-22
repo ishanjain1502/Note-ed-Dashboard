@@ -1,86 +1,250 @@
 :root {
-	--background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
-	--first: #53f;
-	--second: #4553ff;
-	--third: #4f40ff;
-	--fourth: #25ddf5;
-	--fifth: #1fa2ff;
-  }
-  
-  body {
-	padding: 0;
-	margin: 0;
+  --background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
+  --first: #53f;
+  --second: #4553ff;
+  --third: #4f40ff;
+  --fourth: #25ddf5;
+  --fifth: #1fa2ff;
+  --primary-color: #0091ad;
+  --primary-color-light: #e5fbff;
+  --main-font: "Montserrat", sans-serif;
+}
 
-  }
-  
-  #stripes {
-	width: 100%;
-	height: 35vw;
-	background: var(--background);
-	display: grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: repeat(4, 1fr);
-	
-	/* transform: skewY(-12deg); */
-	transform-origin: 0;
-  }
-  
-  #stripes span:nth-child(1) {
-	grid-column: span 1;
-	background: var(--first);
-  }
-  
-  #stripes span:nth-child(2) {
-	grid-column: span 2;
-	background: var(--second);
-  }
-  
-  #stripes span:nth-child(3) {
-	grid-column: span 2;
-	background: var(--third);
-  }
-  
-  #stripes span:nth-child(4) {
-	grid-column: 6;
-	grid-row: 3;
-	background: var(--fourth);
-  }
-  
-  #stripes span:nth-child(5) {
-	grid-column: span 2;
-	grid-row: 4;
-	background: var(--fifth);
-  } 
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(197, 241, 250);
+}
 
-  .card{
-	position: absolute;
-	top: 20%;
-	left:70%;
-	
-	padding: 3rem;
-	border-radius: 20px;
-	color: rgb(9, 0, 0);
-	font-size: 18px;
-	background: rgba(101, 218, 233, 0.3);
-	box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);
-	border-right: 1px solid rgba(255,255,255,0.2);
-	border-bottom: 1px solid rgba(255,255,255,0.2);
-	backdrop-filter: blur(10px);
-	transition: .5s ease;
-	z-index: 10;
-  }
+#stripes {
+  width: 100%;
+  height: 35vw;
+  background: var(--background);
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 
-  .loginbtn{
-	  position: absolute;
-	  padding: 1.5rem;
-	  background-color: rgba(233, 138, 101, 0.8);
-	  width: fit-content;
-	  border-radius: 20px;
-	  text-align: center;
-	  -webkit-transition-duration: 0.4s; /* Safari */
-	  transition-duration: 0.4s;
-	  text-decoration: none;
-	  overflow: hidden;
-	  cursor: pointer;
-	  left: 40%;
+  transform: skewY(-12deg);
+  transform-origin: 0;
+}
+
+#stripes span:nth-child(1) {
+  grid-column: span 1;
+  background: var(--first);
+}
+
+#stripes span:nth-child(2) {
+  grid-column: span 2;
+  background: var(--second);
+}
+
+#stripes span:nth-child(3) {
+  grid-column: span 2;
+  background: var(--third);
+}
+
+#stripes span:nth-child(4) {
+  grid-column: 6;
+  grid-row: 3;
+  background: var(--fourth);
+}
+
+#stripes span:nth-child(5) {
+  grid-column: span 2;
+  grid-row: 4;
+  background: var(--fifth);
+}
+
+.card {
+  position: absolute;
+  top: 20%;
+  left: 70%;
+
+  padding: 3rem;
+  border-radius: 20px;
+  color: rgb(9, 0, 0);
+  font-size: 18px;
+  background: rgba(101, 218, 233, 0.3);
+  box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease;
+  z-index: 10;
+}
+
+.loginbtn {
+  position: absolute;
+  padding: 1.5rem;
+  background-color: rgba(233, 138, 101, 0.8);
+  width: fit-content;
+  border-radius: 20px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  left: 40%;
+}
+
+/* navbar top  */
+.navbar {
+  padding: 0rem 3rem;
+  display: flex;
+  background-color: #0091ad;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-items.flex {
+  gap: 2rem;
+}
+.hero {
+  font-size: 27px;
+}
+
+.gradient {
+  background-color: var(--primary-color);
+  width: 60%;
+  height: 20%;
+  padding: 8rem;
+}
+
+.hero-text-sec {
+  position: absolute;
+  height: 294px;
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: right;
+  color: #0091ad;
+  max-width: 313px;
+  line-height: 36px;
+  position: relative;
+  top: 1rem;
+  position: absolute;
+  top: 8rem;
+  right: 6%;
+  
+}
+
+.download-sec {
+  text-align: center;
+}
+.download-text {
+  display: inline-block;
+  display: inline-block;
+  color: var(--primary-color);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.download-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 40px;
+  border-radius: 9px;
+  display: inline-block;
+  margin: 1rem;
+}
+.download-btn:hover {
+  background-color: white;
+  color: var(--primary-color);
+  transition: 0.5s;
+}
+.bg-primary-light{
+    background-color: var(--primary-color-light);
+}
+
+.sub-info-sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+  margin: 3rem auto;
+  padding: 1rem 0rem;
+}
+
+.info {
+  font-family: var(--main-font);
+  max-width: 30%;
+  font-size: 18px;
+  color: var(--primary-color);
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.image {
+  width: 205px;
+}
+
+h2.image-title {
+  font-size: 29px;
+  color: var(--primary-color);
+  font-weight: 800;
+  padding: 15px 0rem;
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+.dark-text {
+  color: var(--primary-color);
+}
+
+.experience {
+}
+
+/* media queries for smaller screens  */
+@media screen and (max-width: 820px) {
+  .info {
+    max-width: 40%;
   }
+  .experience {
+    /* max-width: 40%; */
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .sub-info-sec {
+    flex-direction: column;
+    margin: 1rem auto;
+  }
+  .sub-info-sec-reverse {
+    flex-direction: column-reverse;
+  }
+  .download-sec {
+    padding-top: 2rem!important;
+    padding-bottom: 0rem!important;
+  }
+  .info {
+    max-width: 60%;
+    text-align: center;
+}
+.gradient{
+    display: none;
+}
+.hero-text-sec {
+    position: static;
+    font-family: var(--main-font);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    color: #0091ad;
+    max-width: 70%;
+    line-height: 36px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+    height: 12rem;
+}
+.download-sec{
+    padding: 0!important;
+}
+}

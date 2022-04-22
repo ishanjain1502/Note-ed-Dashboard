@@ -1,51 +1,93 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Header from './HomeHeader';
 import './styles.css';
+import { useNavigate } from 'react-router-dom';
+
+import Footer from './Footer';
+import Experience from './Experience';
+
+import featuresImg from "../../assets/images/features.svg"
+import whyNotedImg from "../../assets/images/why-noted.svg"
+import whatNotedImg from "../../assets/images/what-noted.svg"
 
 export default function HomePage() {
 
-  let navigate = useNavigate();
-  const toLogin = () => {
-    navigate('/login')
-  }
-  const toRegister = () => {
-    navigate('/register')
-  }
+    let navigate = useNavigate();
+    const toLogin = () => {
+        navigate('/login')
+    }
 
-  // importScript("gradient.js");
-  return (
-    <div className=''>
-    
-    <Header/>
-     <div id="stripes">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <div className='card' >
-      <h1 className='font-serif text-7xl'>Note</h1>
-      <br/>
+    // importScript("gradient.js");
+    return (
+        <>
+            <section className="navbar">
+                <div className="hero"><a href="#">Noted</a></div>
+                <div className="nav-items flex">
+                    <a href="#" className="nav-item get-started">Get started</a>
+                    <a href="#" className="nav-item go-to-dashboard">Dashboard</a>
+                </div>
+            </section>
 
-      <div className="flex shadow-xl">
-        <p className='font-serif text-7xl'>Ed</p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-        <div className='h-16' >
-          {/* <img src="https://img.icons8.com/color/96/000000/pencil--v1.png"/> */}
-        </div>
-      </div>
-    </div>
-    <br/>
-    
-    {/* <div className='loginbtn font-serif text-2xl'> /*}
-      {/* <button onClick={toLogin}>Resume your Note Making</button> */}
-    {/* </div> */} 
-    <div className='flex justify-center' >
-      <button onClick={toRegister} className='  p-3 ' >Start your Journey with us</button>
-      {/* <button onClick={toLogin} >Login to Dashboard</button>  */} 
-    </div>
-    </div>
+            <main className="main">
+                <div className="gradient">This is gradient</div>
+                <section className="hero-text-sec">
+                    <span>Taking notes while watching YouTube is difficult ?</span><br />
+                    <span className='text-black'>We’ve got you covered!</span>
+                </section>
 
-  )
+                <div className="download-sec py-12 mt-3">
+                    <h3 className='download-text'>Download extension</h3><br />
+                    <a className='download-btn shadow-xl' href="#">Get Noted</a>
+                </div>
+
+                <section className="main-info-sec">
+
+                    <div className="sub-info-sec bg-primary-light">
+                        <div className="image-main">
+                            <h2 className="image-title">what is noted</h2>
+                            <div className="image">
+                                <img src={whatNotedImg} alt="featuresImg" />
+                            </div>
+                        </div>
+
+                        <div className="info">
+                            Noted is the go to solution to take notes while watching youtube!
+                            You can take notes while watching your favorite podcast, coding tutorial or anything ...
+                        </div>
+                    </div>
+
+                    <div className="sub-info-sec sub-info-sec-reverse">
+                        <div className="info">
+                            Take notes from our extension <br />
+                            Access from anywhere <br />
+                            Edit your notes from dashboard<br />
+                            Share notes with your friends (coming soon)
+                        </div>
+
+                        <div className="image-main">
+                            <h2 className="image-title">main features</h2>
+                            <div className="image">
+                                <img src={featuresImg} alt="featuresImg" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="sub-info-sec bg-primary-light">
+                        <div className="image">
+                            <h2 className="image-title">why noted</h2>
+                            <img src={whyNotedImg} alt="featuresImg" />
+                        </div>
+                        <div className="info">
+                            Noted is the go to solution to take notes while watching youtube!
+                            You can take notes while watching your favorite podcast, coding tutorial or anything ...
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <Experience />
+
+            <Footer />
+
+        </>
+    )
 }
