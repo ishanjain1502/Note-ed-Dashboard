@@ -1,10 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import HomeHeader from '../home/HomeHeader';
 
 export default function Register() {
 
+    const notify = () => toast("Welcome Aboard ! 😎 ");  
     const [email, setEmail] = useState("");
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
@@ -24,8 +27,10 @@ export default function Register() {
             "password" : password
         }).then((res)=> res.data)
         .then(res => {
+            
             console.log(res);
             if(res.message === "user created successfully"){
+                
                 localStorage.setItem('token_on_signup' , res.token)
                 navigate('/login')
             }
@@ -74,14 +79,15 @@ export default function Register() {
                             placeholder="Confirm Password"
                             value={comfirm}
                             onChange={(e) => setComfirm(e.target.value)} />
-
+                        <div >
                         <button
                             type="submit"
                             class="w-full text-center py-3 rounded bg-green text-white bg-blue-600 hover:bg-blue-500 focus:outline-none my-1"
                             value="Register"
                             onClick={registerUser}
                         >Create Account</button>
-
+                        <ToastContainer/>
+                        </div>
                         <div class="text-center text-sm text-grey-dark mt-4">
                             By signing up, you agree to the
                             <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
