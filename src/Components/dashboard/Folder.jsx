@@ -6,11 +6,16 @@ import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import Options from './Options';
 import React, { useState } from 'react';
 
 export default function Folder(props) {
   const [open, setOpen] = useState(true);
+  const [updatedName,setUpdatedName]=useState();
 
+  const updateFolderName=(title)=>{
+    setUpdatedName(title);
+  }
   const handleClick = () => {
     setOpen(!open);
   };
@@ -29,23 +34,10 @@ export default function Folder(props) {
         {/* <ListItemIcon style={{"background-image" : "linear-gradient(to right ,#2196F3, #3F51B5)"}} > */}
           <FolderIcon style={{ "color": "white" , "margin-right" : "12px"}}  />
         {/* </ListItemIcon> */}
-        <ListItemText primary={props.foldername} />
-        {open ? <ExpandLess /> : <ExpandMore />}
+        <ListItemText primary={updatedName || props.folder_name} />
+        <Options folders={true} folder_name={props.folder_name} folder_id={props.folder_id} updateFolderName={updateFolderName} deleteFolderFromArray={props.deleteFolderFromArray}></Options>
       </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-
-          {props['videos'].map(video=>{
-            return <ListItemButton sx={{ pl: 4 }} style={{"background-image" : "rgba(0,130,173,0.1)"   }} >
-            {/* <ListItemIcon> */}
-              <YouTubeIcon style={{"margin-right" : "8px"}} />
-            {/* </ListItemIcon> */}
-            <ListItemText primary={video}  />
-          </ListItemButton> 
-          })}
-          
-        </List>
-      </Collapse>
+      
     </List>
     </div>
   );
