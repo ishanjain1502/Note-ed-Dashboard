@@ -1,9 +1,13 @@
-import React from 'react';
+import React,{useState} from 'react';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import Options from '../Options';
 
 export default function Video(props) {
+    const [updatedVideoName,setUpdatedVideoName]=React.useState();
+    const updateVideoName=(newVideoName)=>{
+        setUpdatedVideoName(newVideoName);
+    }
     let navigate = useNavigate();
     let { video_name, video_url, video_id } = props.video;
 
@@ -24,9 +28,9 @@ export default function Video(props) {
                 {/* {
                     video_name = video_name.slice(0 , 40) + (video_name.length > 20 ? ". . ." : " ")
                 } */}
-                <p className='text-new-green text-ellipsis overflow-hidden '>{video_name}</p>
+                <p className='text-new-green text-ellipsis overflow-hidden '>{updatedVideoName || video_name}</p>
             </div>
-            <Options></Options>
+            <Options video_id={video_id} updateVideoName={updateVideoName}></Options>
 
 
            

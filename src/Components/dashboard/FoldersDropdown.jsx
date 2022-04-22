@@ -10,10 +10,10 @@ import Select from '@mui/material/Select';
 import axios from 'axios';
 
 export default function BasicSelect(props) {
-  const [age, setAge] = React.useState('');
+  const [folder, setFolder] = React.useState('');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setFolder(event.target.value);
     props.changeFolder(event);
   };
 
@@ -34,12 +34,12 @@ export default function BasicSelect(props) {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-label">Folder</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
-          label="Age"
+          value={folder}
+          label="Folder"
           onChange={handleChange}
         >
          {folders && folders.map(folder=>{
