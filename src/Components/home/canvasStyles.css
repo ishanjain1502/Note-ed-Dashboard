@@ -15,7 +15,7 @@
 body{
     overflow-x: hidden;
 }
-
+/* 
 
 .ocean { 
     height: 1px;
@@ -25,6 +25,7 @@ body{
     left:0;
     background: #015871;
     transform: rotate(180deg);
+    z-index: -1;
   }
   
   .wave {
@@ -35,6 +36,7 @@ body{
     height: 250px;
     animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
     transform: translate3d(0, 0, 0);
+    z-index: -1;
   }
   
   .wave:nth-of-type(2) {
@@ -61,9 +63,27 @@ body{
     }
   }
   
-  h1{
+ h1{
     z-index: 10;
     position: absolute;
     top:40px;
     left:40px
-  }
+  } */
+ 
+  .ocean {
+    width: 130%;
+    height: 60%;
+    position: absolute;
+    top: -150px;
+    left: -85px;
+    background: linear-gradient(45deg,#F17C58, #ff7eb0, #2cc7ff , #27DBB1,#FFDC18, #ff5f37);
+    background-size: 600% 100%;
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
+    z-index: -1;
+    transform: rotate(-14deg)
+}
+@keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
+}
