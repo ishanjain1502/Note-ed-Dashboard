@@ -29,7 +29,7 @@
   display: flex;
   justify-content: space-between;
 } */
-.save-notes-btn {
+/* .save-notes-btn {
   position: relative;
   cursor: pointer;
     top: -26px;
@@ -38,9 +38,27 @@
     color: white;
     border-radius: 3px;
     display: inline-block;
-}
+} */
 .video-info {
   margin: 0 auto;
-  width: 21%;
-  border-radius: 3px;
+  color: white;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #c8d8f8;
+  border-radius: 5px;
+  gap: 1rem;
+}
+.exact-time{
+  background-color: #2d5fc8;
+  padding: 2px 18px;
+}
+button.save-notes-btn {
+  background-color: #3552c5;
+  padding: 6px 18px;
+  border-radius: 8px;
+}
+div#editorjs {
+  text-align: left;
+  padding: 0.4rem 1.2rem;
 }

@@ -13,21 +13,21 @@ export default function NotesContainer(props) {
     const [activeTimestamp, setActiveTimestamp] = useState({
         time: 1552744582955,
         blocks: [
-          {
-            type: "paragraph",
-            data: {
-              text: "Welcome to Sasta Notion"
+            {
+                type: "paragraph",
+                data: {
+                    text: "Welcome to Sasta Notion"
+                }
             }
-          }
         ],
         version: "2.11.10"
-      });
-    const { video_name,video_id } = props;
+    });
+    const { video_name, video_id } = props;
 
     let host = "http://localhost:8000"
 
     const fetchNotes = () => {
-        const token=localStorage.getItem('token').toString();
+        const token = localStorage.getItem('token').toString();
         axios.get(`${host}/api/v1/video/${video_id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -45,10 +45,10 @@ export default function NotesContainer(props) {
     }, [])
 
     return (
-        <>
-            {timestamp ? <div className='notes-main-container'>
+        <section className='notes-container-main'>
+            {timestamp ? <div className='notes-container'>
 
-                <div className="notes-timeline-container text-center my-3 bg-indigo-100">
+                <div className="notes-timeline-container text-center">
                     <h1 className='py-2 text-xl'>Video notes timeline</h1>
                     <ButtonGroup variant="contained" aria-label="outlined primary button group">
                         {timestamp && timestamp.map((time, index) => {
@@ -62,7 +62,7 @@ export default function NotesContainer(props) {
                     </div>
                 </div>
 
-                <div className="notes-editor-container bg-indigo-100 py-2 my-3 text-center">
+                <div className="notes-editor-container py-2 text-center">
                     {<Editor activeTimestamp={activeTimestamp} />}
                 </div>
             </div> :
@@ -73,6 +73,6 @@ export default function NotesContainer(props) {
                 </div>
 
             }
-        </>
+        </section>
     )
 }

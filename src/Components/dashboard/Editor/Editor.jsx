@@ -45,11 +45,12 @@ export default function Editor({ activeTimestamp }) {
     return (
         <>
             <div className="video-nav">
-                <div className="video-info bg-indigo-300">
-                    <h2 className='text-xl'>{`Notes on : ${exactTime}`}</h2>
+                <div className="video-info">
+                    <p className='exact-time'>{`Notes on : ${exactTime}`}</p>
+                    <button className='save-notes-btn shadow-sm btn-link px-2' onClick={saveData}>Save</button>
                 </div>
                 <div className="btn-container">
-                    <p className='save-notes-btn shadow-sm btn-link bg-indigo-300 px-2' onClick={saveData}>Save</p>
+                    
                 </div>
 
             </div>

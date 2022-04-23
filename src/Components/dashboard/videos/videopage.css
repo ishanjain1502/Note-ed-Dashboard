@@ -3,3 +3,32 @@
     margin: 0 auto;
     margin-bottom: 7rem;
 }
+
+.notes-timeline-container {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: aliceblue;
+}
+
+.video-page{
+    transition: ease-in-out .5s;
+}
+
+.notes-container-main {
+    width: 45%;
+    height: 80vh;
+    background-color: white;
+    border: 3px solid #6094ff;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+section.notes-and-video.flex {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+button.MuiButton-root {
+    background-color: #2d5fc8!important;
+}
