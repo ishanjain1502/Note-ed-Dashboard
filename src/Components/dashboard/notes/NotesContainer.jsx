@@ -54,7 +54,7 @@ export default function NotesContainer(props) {
                         {timestamp && timestamp.map((time, index) => {
 
                             let currentTime = Object.keys(time)[0];
-                            return <Notestamp player={player} key={currentTime} time={currentTime} timestamp={time} setActiveTimestamp={setActiveTimestamp}></Notestamp>
+                            return <Notestamp player={player} key={currentTime} time={currentTime} timestamp={time} activeTimestamp={activeTimestamp} setActiveTimestamp={setActiveTimestamp}></Notestamp>
                         })}
                     </ButtonGroup>
                     <div className="sort-btn">

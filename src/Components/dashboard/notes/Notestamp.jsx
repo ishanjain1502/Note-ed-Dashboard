@@ -2,25 +2,34 @@ import React from 'react'
 import Button from '@mui/material/Button';
 import './sortTimeLine.css';
 
-export default function Notestamp({ timestamp, time, setActiveTimestamp, player }) {
+export default function Notestamp({ timestamp, time, activeTimestamp, setActiveTimestamp, player }) {
 
     const seekToTimestamp = (seconds) => {
         player.current.seekTo(seconds, 'seconds');
     }
-    const getSeconds = (time)=>{
+    const getSeconds = (time) => {
         let timeArr = time.split(":");
-        let seconds = parseInt(timeArr[0])*60*60 + parseInt(timeArr[1])*60 + parseInt(timeArr[2]);
-        console.log(seconds,"seconds");
+        let seconds = parseInt(timeArr[0]) * 60 * 60 + parseInt(timeArr[1]) * 60 + parseInt(timeArr[2]);
+        console.log(seconds, "seconds");
         return seconds;
     }
     const onNotestampClick = () => {
-        console.log("clicked on notestamp");
-        const editorjs = document.getElementById('editorjs')
-        while (editorjs.firstChild) {
-            editorjs.removeChild(editorjs.firstChild);
-        }
+
         // console.log(timestamp,"\n",time);
-        setActiveTimestamp(timestamp);
+        let activeTTStr = JSON.stringify(activeTimestamp);
+        let currentTTStr = JSON.stringify(timestamp);
+        if (activeTTStr == currentTTStr) {
+            console.log("same");
+        } else if (activeTTStr !== currentTTStr) {
+            const editorjs = document.getElementById('editorjs')
+            while (editorjs.firstChild) {
+                editorjs.removeChild(editorjs.firstChild);
+            }
+
+            console.log("not same");
+            setActiveTimestamp(timestamp);
+        }
+        // setActiveTimestamp(timestamp);
 
         // seek to timestamp
         let seconds = getSeconds(time);
