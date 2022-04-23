@@ -1,13 +1,14 @@
 import React from 'react';
-import './styles.css';
 import { useNavigate } from 'react-router-dom';
-
-import Footer from './Footer';
+import featuresImg from "../../assets/images/features.svg";
+import whatNotedImg from "../../assets/images/what-noted.svg";
+import whyNotedImg from "../../assets/images/why-noted.svg";
+import './canvasStyles.css';
 import Experience from './Experience';
+import Footer from './Footer';
+import './styles.css';
 
-import featuresImg from "../../assets/images/features.svg"
-import whyNotedImg from "../../assets/images/why-noted.svg"
-import whatNotedImg from "../../assets/images/what-noted.svg"
+
 
 export default function HomePage() {
 
@@ -15,6 +16,8 @@ export default function HomePage() {
     const toLogin = () => {
         navigate('/login')
     }
+
+    
 
     // importScript("gradient.js");
     return (
@@ -27,8 +30,16 @@ export default function HomePage() {
                 </div>
             </section>
 
+        <div className='container'>
+            <div className="ocean">
+                <div className="wave"></div>
+                <div className="wave"></div>
+            </div>
+        </div>
             <main className="main">
-                <div className="gradient">This is gradient</div>
+                <div className="gradient">This is gradient
+                    <canvas id='gradient-canvas' />
+                </div>
                 <section className="hero-text-sec">
                     <span>Taking notes while watching YouTube is difficult ?</span><br />
                     <span className='text-black'>We’ve got you covered!</span>

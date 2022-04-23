@@ -1,17 +1,17 @@
 import AddIcon from '@mui/icons-material/Add';
 import { ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import React, { useEffect,useState } from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import Folder from './Folder';
 import axios from 'axios';
-export default function Folders(props) {
-  const [activeFolder, setActiveFolder] = ("");
+import React, { useEffect, useState } from 'react';
+import Folder from './Folder';
+export default function Folders(active) {
+
   const [title,setTitle]=React.useState();
   const [folders,setFolders]=useState([]);
   const [modalOpen,setModalOpen]=React.useState(false);
   const token=localStorage.getItem('token');
+  console.log(active);
 
   const handleModalClose=()=>{
     setModalOpen(false);
@@ -43,12 +43,8 @@ export default function Folders(props) {
       }
     )
   }
-  const getVideos = async() => {
-    console.log("inside GETTING VIDEOS FROM ACTIVE FOLDER");
-  }
-  useEffect(() => {
-  getVideos()
-  }, [activeFolder])
+
+
     
   const createFolder=()=>{
     if(!title){
@@ -84,7 +80,7 @@ export default function Folders(props) {
   return (
     <div className='max-w-1/5' >
         {folders.map(({folder_name,_id})=>{
-          return <Folder folder_name={folder_name} folder_id={_id}  deleteFolderFromArray={deleteFolderFromArray}></Folder>
+          return <Folder folder_name={folder_name} active ={active} folder_id={_id}  deleteFolderFromArray={deleteFolderFromArray}></Folder>
         })}
         <ListItem disablePadding>
             <ListItemButton onClick={handleModalOpen}>

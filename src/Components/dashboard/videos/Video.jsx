@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
 import Options from '../Options';
@@ -10,6 +10,11 @@ export default function Video(props) {
     }
     let navigate = useNavigate();
     let { video_name, video_url, video_id } = props.video;
+
+    if(typeof video_url !== 'undefined'){
+    }else{
+        video_url = "https://www.youtube.com/watch?v=" + video_id
+    }
 
     const navigateToVideoPage = () => {
         navigate(`/video/${video_name}`, {
