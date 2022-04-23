@@ -17,7 +17,7 @@ export default function EditInfo(props) {
 
       <Modal
         open={props.open}
-        
+        className='ml-96 mt-32'
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >

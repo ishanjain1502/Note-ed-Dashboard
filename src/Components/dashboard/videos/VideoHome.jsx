@@ -6,17 +6,10 @@ import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Video from "./Video";
 
-
-
-// http://Backend-1.prathameshdukare.repl.co/api/v1/search/video?videoname=abc&deleted=false
-
-export default function VideoHome( active) {
-
     const [videos, setVideos] = useState();
     let host = "http://localhost:8000"
     const navigate = useNavigate();
     const [query, setQuery] = useState("");
-    
     let basic = 0;
     
     useEffect(() => {
@@ -70,6 +63,8 @@ export default function VideoHome( active) {
       const toHome = () => {
         navigate('/dashboard')
       }
+
+
 
  
   const searchQuery = async () => {

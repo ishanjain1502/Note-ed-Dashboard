@@ -25,20 +25,22 @@ export default function HomePage() {
             <section className="navbar">
                 <div className="hero"><a href="#">Noted</a></div>
                 <div className="nav-items flex">
-                    <a href="/register" className="nav-item get-started">Get started</a>
-                    <a href="/dashboard" className="nav-item go-to-dashboard">Dashboard</a>
+                    <span className='rounded-full px-4 py-2 bg-new-blue ' ><a href="/register" className="nav-item get-started text-xl">Get started</a></span>
+                    <span  className='rounded-full px-4 py-2 bg-new-blue '><a href="/dashboard" className="nav-item go-to-dashboard text-xl">Dashboard</a></span>
+
+
                 </div>
             </section>
 
         <div className='container'>
             <div className="ocean">
-                <div className="wave"></div>
-                <div className="wave"></div>
+                {/* <div className="wave"></div>
+                <div className="wave"></div> */}
             </div>
         </div>
             <main className="main">
-                <div className="gradient">This is gradient
-                    <canvas id='gradient-canvas' />
+                <div className="gradient">
+                    
                 </div>
                 <section className="hero-text-sec">
                     <span>Taking notes while watching YouTube is difficult ?</span><br />
@@ -46,8 +48,8 @@ export default function HomePage() {
                 </section>
 
                 <div className="download-sec py-12 mt-3">
-                    <h3 className='download-text'>Download extension</h3><br />
-                    <a className='download-btn shadow-xl' href="#">Get Noted</a>
+                    <h3 className='download-text'></h3><br />
+                    <a className='download-btn shadow-xl text-xl' href="#">Get Noted</a>
                 </div>
 
                 <section className="main-info-sec">

@@ -8,7 +8,7 @@ module.exports = {
       colors: {
         'trans-col' : 'rgba(255, 255, 255, 0.6)' ,
         'new-green': 'rgba(0,130,173, 0.6)',
-        'new-blue': "",
+        'new-blue': "rgb(0,102,122)",
         'light-green' : '#EBFCFF'
       },
     },
