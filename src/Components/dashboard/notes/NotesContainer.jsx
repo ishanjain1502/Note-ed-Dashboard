@@ -10,6 +10,7 @@ import './sortTimeLine.css';
 
 export default function NotesContainer(props) {
     const [timestamp, setTimstamp] = useState(null);
+    const [videoName, setVideoName] = useState("");
     const [activeTimestamp, setActiveTimestamp] = useState({
         time: 1552744582955,
         blocks: [
@@ -34,6 +35,7 @@ export default function NotesContainer(props) {
             }
         }).then(data => {
             console.log(data);
+            setVideoName(data.data.videoname)
             setTimstamp(data.data.data);
             setActiveTimestamp(data.data.data[0]);
         })
@@ -63,7 +65,7 @@ export default function NotesContainer(props) {
                 </div>
 
                 <div className="notes-editor-container py-2 text-center">
-                    {<Editor activeTimestamp={activeTimestamp} />}
+                    {<Editor activeTimestamp={activeTimestamp} videoName={videoName} />}
                 </div>
             </div> :
                 <div className="spinner">

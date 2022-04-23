@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import EditorJS from '@editorjs/editorjs';
 import "./editor.css";
 import tools from "./commonTools"
 
+const API_HOST = 'http://localhost:8000';
 
-export default function Editor({ activeTimestamp }) {
+export default function Editor({ activeTimestamp ,videoName}) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = React.useState(true);
     // const [isSaveDisabled, setSaveDisabled] = React.useState(false);
@@ -26,14 +28,35 @@ export default function Editor({ activeTimestamp }) {
         });
     }
 
-    const saveData = () => {
-        editor.save().then((outputData) => {
+    const saveData =  () => {
+        editor.save().then( async (outputData) => {
             console.log(outputData)
-            setdisabledState("disabled");
-            
-            //TODO: DO API call here only!
+            // setdisabledState("disabled");
 
-            
+            //TODO: DO API call here only!
+            let note = JSON.stringify(outputData);
+            let timestamp = exactTime;
+            const { authToken } = await localStorage.getItem("token")
+            console.log(authToken,"uthay")
+
+            console.log("calling api")
+            axios.put(`${API_HOST}/api/v1/notes/timestamp/update`, {
+                videoname: videoName,
+                timestamp: timestamp,
+                content: note
+            },{ 
+                headers: {
+                        authorization: `Bearer ${authToken}`,
+                    }
+                })
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((err) => {
+                    console.log(err);
+                    return false;
+                });
+
         }).catch((error) => {
             console.log('Saving failed: ', error)
         });
@@ -43,7 +66,7 @@ export default function Editor({ activeTimestamp }) {
         setLoading(true);
     }
 
-    useEffect(() => {   
+    useEffect(() => {
         launchEditor()
     })
     return (
@@ -54,7 +77,7 @@ export default function Editor({ activeTimestamp }) {
                     <button className={`save-notes-btn save-disabled shadow-sm btn-link px-2 ${disabledState}`} onClick={saveData}>Save</button>
                 </div>
                 <div className="btn-container">
-                    
+
                 </div>
 
             </div>
