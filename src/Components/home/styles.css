@@ -90,7 +90,7 @@ body {
 
 /* navbar top  */
 .navbar {
-  padding: 0rem 3rem;
+  padding: 1rem 5rem;
   display: flex;
   background-color: #0091ad;
   color: white;
@@ -98,14 +98,14 @@ body {
   align-items: center;
 }
 .nav-items.flex {
-  gap: 2rem;
+  gap: 4rem;
 }
 .hero {
   font-size: 27px;
 }
 
 .gradient {
-  background-color: var(--primary-color);
+  background-color: rgba(101, 218, 233, 0);
   width: 60%;
   height: 20%;
   padding: 8rem;

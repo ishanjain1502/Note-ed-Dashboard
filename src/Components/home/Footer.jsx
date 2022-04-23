@@ -6,7 +6,7 @@ export default function Footer() {
         <div className='footer main-footer-noted flex-col  lg:h-80  h-max pt-5 px-20'>
             <div className='flex lg:flex-row flex-col'>
                 <div className=' 2xl:w-80 2xl:mr-32 lg:w-72 lg:mr-24 lg:items-stretch flex flex-col items-center'>
-                    <h1 className='text-3xl mb-5 font-bold'>Noted</h1>
+                    {/* <h1 className='text-3xl mb-5 font-bold'>Noted</h1> */}
                     <p className=' lg:text-left lg:w-90 w-80 text-center text-lg mb-7'>Take notes while watching videos without leaving Youtube</p>
                 </div>
                 <div className='flex sm:flex-row flex-col lg:justify-stretch justify-around sm:items-stretch items-center'>

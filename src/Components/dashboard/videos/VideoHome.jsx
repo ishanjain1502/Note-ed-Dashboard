@@ -5,40 +5,73 @@ import axios from "axios";
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Video from "./Video";
+
+
+
 // http://Backend-1.prathameshdukare.repl.co/api/v1/search/video?videoname=abc&deleted=false
 
-export default function VideoHome() {
-  const [videos, setVideos] = useState();
-  let host = "http://localhost:8000";
-  const navigate = useNavigate();
-  const [query, setQuery] = useState("");
-  let basic = 0;
-  useEffect(() => {
-    const token = localStorage.getItem("token").toString();
-    axios
-      .get(`${host}/api/v1/videos/?deleted=false`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((data) => {
-        console.log(data);
-        if (data.data.message === "success") {
-          setVideos(data.data.videos);
+export default function VideoHome( active) {
+
+    const [videos, setVideos] = useState();
+    let host = "http://localhost:8000"
+    const navigate = useNavigate();
+    const [query, setQuery] = useState("");
+    
+    let basic = 0;
+    
+    useEffect(() => {
+        const token=localStorage.getItem('token').toString();
+        axios.get(`${host}/api/v1/videos/?deleted=false`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then(data => {
+            console.log(data);
+            if (data.data.message === 'success') {
+                setVideos(data.data.videos);
+            }
+        }).catch(err => {
+            console.log(err);
+        })
+    }, [basic]);
+
+    useEffect(() => {
+        const token=localStorage.getItem('token').toString();
+        let arr1 = Object.values(active)
+        console.log(arr1);
+        if(typeof active !== ""){
+            axios.post(`${host}/api/v1/folder/getvideos`,  {
+                "folder_name" : arr1[0]
+            },{
+                headers : {
+                    Authorization : `Bearer ${token}`
+                }
+            }).then((res)=> {
+                console.log(res.data.message);
+                let data = res.data.data
+                console.log(data);
+
+
+                if(res.data.message === 'success'){
+                  console.log("Inside Success");
+                  setVideos(data)
+                }
+
+            }).catch((err)=> {
+                console.log(err);
+            })
         }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [basic]);
+    }, [active])
+    
+    const toProfile = () => {
+        navigate('/profile')
+      }
+  
+      const toHome = () => {
+        navigate('/dashboard')
+      }
 
-  const toProfile = () => {
-    navigate("/profile");
-  };
 
-  const toHome = () => {
-    navigate("/dashboard");
-  };
 
   const searchQuery = async () => {
     let token = localStorage.getItem("token").toString();
