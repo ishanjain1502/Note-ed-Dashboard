@@ -7,6 +7,9 @@ import tools from "./commonTools"
 const API_HOST = 'http://localhost:8000';
 
 export default function Editor({ activeTimestamp ,videoName}) {
+
+    
+
     const [data, setData] = useState(null);
     const [loading, setLoading] = React.useState(true);
     // const [isSaveDisabled, setSaveDisabled] = React.useState(false);
@@ -29,15 +32,14 @@ export default function Editor({ activeTimestamp ,videoName}) {
     }
 
     const saveData =  () => {
-        editor.save().then( async (outputData) => {
+        editor.save().then( (outputData) => {
             console.log(outputData)
             // setdisabledState("disabled");
 
             //TODO: DO API call here only!
             let note = JSON.stringify(outputData);
             let timestamp = exactTime;
-            const { authToken } = await localStorage.getItem("token")
-            console.log(authToken,"uthay")
+            const authToken = localStorage.getItem("token")
 
             console.log("calling api")
             axios.put(`${API_HOST}/api/v1/notes/timestamp/update`, {

@@ -3,7 +3,6 @@ import Button from '@mui/material/Button';
 import './sortTimeLine.css';
 
 export default function Notestamp({ timestamp, time, activeTimestamp, setActiveTimestamp, player }) {
-
     const seekToTimestamp = (seconds) => {
         player.current.seekTo(seconds, 'seconds');
     }
