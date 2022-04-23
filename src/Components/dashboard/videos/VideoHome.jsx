@@ -71,9 +71,7 @@ export default function VideoHome( active) {
         navigate('/dashboard')
       }
 
-  const toHome = () => {
-    navigate("/dashboard");
-  };
+
 
   const searchQuery = async () => {
     let token = localStorage.getItem("token").toString();
