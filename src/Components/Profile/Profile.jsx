@@ -1,11 +1,12 @@
 
 import React, { useEffect, useState } from 'react';
-import Navbar from '../NavBar/Navbar';
+import Navbar from './Navbar';
 import EditInfo from './EditInfo';
 import { useNavigate } from 'react-router-dom';
 import StatsBox from './StatsBox';
 import axios from 'axios';
-
+import multiavatar from '@multiavatar/multiavatar/esm';
+import Avatar, { genConfig } from 'react-nice-avatar'
 export default function Profile() {
     const navigate = useNavigate();
     const [open,setOpen]=useState(false);
@@ -13,16 +14,12 @@ export default function Profile() {
     const [data,setData]=useState({});
     const [stats,setStats]=useState({});
     const handleOpen=(e)=>{
-       
         setModalType(e.target.value);
-        
-        
         setOpen(true);
     }
     const handleClose=()=>{
         setOpen(false);
     }
-
 
     const logMeOut = ()=>{
         console.log("loggging out");
@@ -73,15 +70,21 @@ export default function Profile() {
         console.log(info);
     },[])
 
-
-    
+    //const svgCode = multiavatar(data.username)
+    // let avatar= document.getElementById('avatar');
+    // avatar.innerHTML=svgCode;
+    const config = genConfig({
+        sex:"man",
+    }) 
   return (
     <div>
 
         <Navbar/>
-        <div className="m-auto bg-cover bg-no-repeat bg-center w-full h-[300px]" style={{"background-image":"url(https://codedamn.com/assets/cover-image.svg)"}}></div>
+        <div className="m-auto bg-cover bg-no-repeat bg-center w-full h-[200px]" style={{"background-image":"url(https://codedamn.com/assets/cover-image.svg)","maxHeight":"2%"}}></div>-
         <main className="pl-14">
 
+        {/* <div id="avatar"className="relative w-36 h-36 overflow-hidden  rounded-full ml-20 -mt-20"></div> */}
+        <Avatar className="relative w-36 h-36 overflow-hidden  rounded-full ml-20 -mt-20" {...config} />
         <div className='flex'>
 
         <div className='flex flex-col items-center w-80'>
@@ -93,15 +96,15 @@ export default function Profile() {
                         <p>Joined May 2020</p></div>
             <button onClick={(e)=>{
                 handleOpen(e);
-            }} value="personal" class="px-4 py-2 mb-4 text-xs w-80 font-semibold text-blue-400 border border-blue-400 rounded-md sm:text-sm hover:bg-gray-100">Edit profile</button>
+            }} value="personal" class="px-4 py-2 mb-4 text-xs w-64 font-semibold text-blue-400 border border-blue-400 rounded-2xl sm:text-sm hover:bg-gray-100">Edit profile</button>
             <button onClick={(e)=>{
                 handleOpen(e);
-            }} value="changepassword" class="px-4 py-2 mb-4 text-xs w-80 font-semibold text-blue-400 border border-blue-400 rounded-md sm:text-sm hover:bg-gray-100">Change Password</button>
-            <button class="px-4 py-2 mb-4 text-xs w-80 font-semibold text-red-400 border border-red-400 rounded-md sm:text-sm hover:bg-gray-100" onClick={logMeOut}>Logout</button>
+            }} value="changepassword" class="px-4 py-2 mb-4 text-xs w-64 font-semibold text-blue-400 border border-blue-400 rounded-2xl sm:text-sm hover:bg-gray-100">Change Password</button>
+            <button class="px-4 py-2 mb-4 text-xs w-64 font-semibold text-blue-400 border border-blue-400 rounded-2xl sm:text-sm hover:bg-gray-100" onClick={logMeOut}>Logout</button>
         </div>
 
         <div className="flex flex-col items-center flex-1 justify-center">
-            <h1 class="font-bold text-lg mb-3 sm:text-[22px] mb-3">Stats</h1>
+            <h1 class="font-bold text-lg mb-3 sm:text-[22px] mb-3" >Stats</h1>
             <div className='flex w-2/4'>
                     <StatsBox title={"Videos"} stats={stats && stats.videos}></StatsBox>
                     <StatsBox title={"Folders"} stats={stats && stats.folders}></StatsBox>
