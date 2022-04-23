@@ -5,8 +5,11 @@ import axios from "axios";
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Video from "./Video";
+
+
+
 // http://Backend-1.prathameshdukare.repl.co/api/v1/search/video?videoname=abc&deleted=false
-<<<<<<< HEAD
+
 export default function VideoHome( active) {
 
     const [videos, setVideos] = useState();
@@ -67,37 +70,6 @@ export default function VideoHome( active) {
       const toHome = () => {
         navigate('/dashboard')
       }
-=======
-
-export default function VideoHome() {
-  const [videos, setVideos] = useState();
-  let host = "http://localhost:8000";
-  const navigate = useNavigate();
-  const [query, setQuery] = useState("");
-  let basic = 0;
-  useEffect(() => {
-    const token = localStorage.getItem("token").toString();
-    axios
-      .get(`${host}/api/v1/videos/?deleted=false`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((data) => {
-        console.log(data);
-        if (data.data.message === "success") {
-          setVideos(data.data.videos);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [basic]);
-
-  const toProfile = () => {
-    navigate("/profile");
-  };
->>>>>>> e970e302955bc7fa8ffe4b1da9c448e6ee2b2da9
 
   const toHome = () => {
     navigate("/dashboard");
