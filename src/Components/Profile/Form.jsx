@@ -20,7 +20,7 @@ export default function Form(props) {
   </div>
 
   <div className="flex justify-end pt-4 space-x-4 sm:pt-3">
-    <button type='button' className="w-full font-semibold disabled:opacity-50 bg-indigo-500 focus:ring-2 focus:ring-offset-2 ring-indigo-500 text-white rounded shadow hover:bg-indigo-600 px-4 py-2" >Save</button>
+    <button type='button' className="w-full font-semibold disabled:opacity-50 bg-teal-500 focus:ring-2 focus:ring-offset-2 ring-teal-500 text-white rounded shadow hover:bg-teal-600 px-4 py-2" >Save</button>
   </div>
 </form>
 :
