@@ -7,6 +7,8 @@ import tools from "./commonTools"
 export default function Editor({ activeTimestamp }) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = React.useState(true);
+    // const [isSaveDisabled, setSaveDisabled] = React.useState(false);
+    const [disabledState, setdisabledState] = React.useState("");
 
     console.log(activeTimestamp)
     let exactTime = Object.keys(activeTimestamp)[0];
@@ -27,8 +29,10 @@ export default function Editor({ activeTimestamp }) {
     const saveData = () => {
         editor.save().then((outputData) => {
             console.log(outputData)
+            setdisabledState("disabled");
             // setData(outputData);
             //TODO: DO API call here only!
+
             
         }).catch((error) => {
             console.log('Saving failed: ', error)
@@ -47,7 +51,7 @@ export default function Editor({ activeTimestamp }) {
             <div className="video-nav">
                 <div className="video-info">
                     <p className='exact-time'>{`Notes on : ${exactTime}`}</p>
-                    <button className='save-notes-btn shadow-sm btn-link px-2' onClick={saveData}>Save</button>
+                    <button className={`save-notes-btn save-disabled shadow-sm btn-link px-2 ${disabledState}`} {...disabledState} onClick={saveData}>Save</button>
                 </div>
                 <div className="btn-container">
                     

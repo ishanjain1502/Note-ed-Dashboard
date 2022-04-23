@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #0091ad;
+  --primary-dark-md: #368a9b;
+  --primary-light-md: #7fcddf;
+  --primary-light: #cff2fa;
+  --disabled-btn-color: #72aab4;
+}
+
 .codex-editor__redactor {
   padding-bottom: 0 !important;
 }
@@ -45,20 +53,37 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  background-color: #c8d8f8;
+  background-color: var(--primary-light);
   border-radius: 5px;
   gap: 1rem;
 }
 .exact-time{
-  background-color: #2d5fc8;
+  background-color: #68b9cb;
   padding: 2px 18px;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
 }
 button.save-notes-btn {
-  background-color: #3552c5;
-  padding: 6px 18px;
-  border-radius: 8px;
+  background-color: var(--primary-color);
+    padding: 0px 21px;
+    border-radius: 14px;
+    font-size: 14px;
 }
+button.save-notes-btn:hover {
+  background-color: var(--primary-dark-md);
+}
+.disabled{
+  background-color: var(--disabled-btn-color)!important;
+}
+
 div#editorjs {
   text-align: left;
   padding: 0.4rem 1.2rem;
+}
+
+
+button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.timeline-btn.MuiButtonGroup-grouped.MuiButtonGroup-groupedHorizontal.MuiButtonGroup-groupedContained.MuiButtonGroup-groupedContainedHorizontal.MuiButtonGroup-groupedContainedPrimary.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  border-radius: 5px;
 }

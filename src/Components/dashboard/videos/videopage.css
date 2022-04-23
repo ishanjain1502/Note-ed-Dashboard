@@ -1,3 +1,10 @@
+:root {
+    --primary-color: #0091ad;
+    --primary-dark-md: #368a9b;
+    --primary-light-md: #7fcddf;
+    --primary-light: #cff2fa;
+  }
+
 .timestamps-list-div {
     width: 73%;
     margin: 0 auto;
@@ -19,7 +26,7 @@
     width: 45%;
     height: 80vh;
     background-color: white;
-    border: 3px solid #6094ff;
+    border: 3px solid var(--primary-light-md);
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -30,5 +37,5 @@ section.notes-and-video.flex {
 }
 
 button.MuiButton-root {
-    background-color: #2d5fc8!important;
+    background-color: var(--primary-color)!important;
 }

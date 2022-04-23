@@ -22,7 +22,7 @@ export default function NotesContainer(props) {
         ],
         version: "2.11.10"
     });
-    const { video_name, video_id } = props;
+    const { video_name, video_id,player } = props;
 
     let host = "http://localhost:8000"
 
@@ -54,7 +54,7 @@ export default function NotesContainer(props) {
                         {timestamp && timestamp.map((time, index) => {
 
                             let currentTime = Object.keys(time)[0];
-                            return <Notestamp key={currentTime} time={currentTime} timestamp={time} setActiveTimestamp={setActiveTimestamp}></Notestamp>
+                            return <Notestamp player={player} key={currentTime} time={currentTime} timestamp={time} setActiveTimestamp={setActiveTimestamp}></Notestamp>
                         })}
                     </ButtonGroup>
                     <div className="sort-btn">

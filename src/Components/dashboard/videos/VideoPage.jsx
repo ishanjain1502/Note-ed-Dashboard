@@ -22,8 +22,8 @@ export default function VideoPage(props) {
                 <div className='yt-player-container mt-1 mb-1 mx-3 rounded'>
                     <ReactPlayer className='self-center' ref={player} controls={true} url={video_url} />
                 </div>
-
-                <NotesContainer setTimestampData={setTimestampData} setisNoteOpen={setisNoteOpen} video_id={video_id} video_name={video_name} />
+                
+                <NotesContainer setTimestampData={setTimestampData} player={player} setisNoteOpen={setisNoteOpen} video_id={video_id} video_name={video_name} />
             </section>
 
         </div>
