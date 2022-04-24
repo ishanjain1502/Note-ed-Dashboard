@@ -106,6 +106,9 @@ export default function VideoHome( active) {
       });
     });
   };
+  useEffect(()=>{
+    document.title = "Noted | Dashboard"
+  },[])
 
   return (
     <>
@@ -116,10 +119,10 @@ export default function VideoHome( active) {
           <div className="relative left-16 flex">
             <span className="text-black flex content-center max-h-5 mb-2">
               <span>
-                <img src={icon} style={{height : '215%'}}  alt='logo' />
+                <img src={icon} style={{height : '200%',marginLeft:"0rem"}}  alt='logo' />
               </span>
             </span>
-            <div className="relative right-20 text-5xl text-new-blue font-bold">
+            <div className="relative right-20 text-5xl text-custom font-bold">
               <button>Noted</button>
             </div>
           </div>
@@ -133,14 +136,14 @@ export default function VideoHome( active) {
                 setQuery(e.target.value);
               }}
             />
-            <button className="px-4 bg-new-blue h-8" onClick={searchQuery}>
+            <button className="px-4 bg-custom h-8" onClick={searchQuery}>
               <SearchIcon style={{ color: "white" }} />
             </button>
           </div>
           <span className="profile w-8 text-xl ">
             <button onClick={toProfile}>
               <AccountCircleIcon
-                style={{ color: "rgb(0,102,122)", transform: "scale(1.5)" }}
+                style={{ color: "#0091ad", transform: "scale(1.5)" }}
               />
             </button>
           </span>
