@@ -53,7 +53,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  background-color: var(--primary-light);
+  background-color: #f0f8ff;
   border-radius: 5px;
   gap: 1rem;
 }
@@ -81,9 +81,9 @@ button.save-notes-btn:hover {
 div#editorjs {
   text-align: left;
   padding: 0.4rem 1.2rem;
+  margin: 0 15px;
 }
 
-
-button.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.timeline-btn.MuiButtonGroup-grouped.MuiButtonGroup-groupedHorizontal.MuiButtonGroup-groupedContained.MuiButtonGroup-groupedContainedHorizontal.MuiButtonGroup-groupedContainedPrimary.css-sghohy-MuiButtonBase-root-MuiButton-root {
-  border-radius: 5px;
+.alert-bar{
+  display: none;
 }

@@ -1,6 +1,32 @@
+:root {
+    --primary-color: #0091ad;
+    --primary-dark-md: #368a9b;
+    --primary-light-md: #7fcddf;
+    --primary-light: #cff2fa;
+    --disabled-btn-color: #72aab4;
+    --main-font: "Montserrat", sans-serif;
+  }
 .time-stamp{
     cursor: pointer;
 }
 .notes-frame{
     border: 2px solid black;
+}
+.timestamp-btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0rem 1rem;
+}
+.timestamp-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 6px;
+    margin: 5px;
+    border-radius: 4px;
+}
+.timeline-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #09768b;
+    font-family: var(--main-font);
 }
