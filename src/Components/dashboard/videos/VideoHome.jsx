@@ -106,6 +106,9 @@ export default function VideoHome( active) {
       });
     });
   };
+  useEffect(()=>{
+    document.title = "Noted | Dashboard"
+  },[])
 
   return (
     <>

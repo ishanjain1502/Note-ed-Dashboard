@@ -5,6 +5,7 @@ import './sortTimeLine.css';
 export default function Notestamp({ timestamp, time, activeTimestamp, setActiveTimestamp, player }) {
     const seekToTimestamp = (seconds) => {
         player.current.seekTo(seconds, 'seconds');
+        // player.current.play()
     }
     const getSeconds = (time) => {
         let timeArr = time.split(":");

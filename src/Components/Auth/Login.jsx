@@ -1,6 +1,6 @@
 /*global chrome*/
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -56,7 +56,9 @@ export default function Login(props) {
             navigate('/dashboard');
         })
     }
-
+    useEffect(()=>{
+        document.title = "Login to Noted"
+      },[])
     return (
         <div>
             <nav>
