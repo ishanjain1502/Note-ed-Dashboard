@@ -1,10 +1,9 @@
 /*global chrome*/
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import icon from '../../assets/icon.png';
+import DropDownMenu from '../dashboard/DropDownMenu';
 export default function Header() {
     const navigate = useNavigate();
     const [query, setQuery] = useState("");
@@ -54,11 +53,7 @@ export default function Header() {
                 </div>
           </div>
           <span className="profile w-8 text-xl ">
-            <button onClick={toProfile}>
-              <AccountCircleIcon
-                style={{ color: "rgb(0,102,122)", transform: "scale(1.5)" }}
-              />
-            </button>
+            <DropDownMenu  />
           </span>
         </nav>
       </div>

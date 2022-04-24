@@ -21,6 +21,7 @@ export default function Profile() {
         setOpen(false);
     }
 
+
     const logMeOut = ()=>{
         console.log("loggging out");
 
