@@ -3,7 +3,7 @@ import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import icon from '../../assets/icon.png';
 
 export default function Register() {
 
@@ -13,7 +13,9 @@ export default function Register() {
     const [password, setPassword] = useState("")
     const [comfirm, setComfirm] = useState("")
     const navigate = useNavigate();
-
+    const toHome = () => {
+        navigate('/')
+    }
     const registerUser = async(e) => {
         e.preventDefault()
         console.log("Into signUp zone");
@@ -45,20 +47,34 @@ export default function Register() {
       },[])
     return (
         <div>
-            <nav>
+            {/* <nav>
                 <div style={{
                     "fontSize": "50px",
                     "fontWeight": "700",
-                    "marginLeft": "9vw",
                     "marginTop": "0rem",
                     "paddingTop": "1rem",
-                    "marginBottom": "-2rem",
                     "color": "#0091ad",
-                }}><a href="/">Noted</a></div>
+                }}>
+                    <img className="max-h-12 -mt-0 p-1 ml-20 -mb-12" src={icon}  style={{height : '175%'}} alt='logo' />
+                    <a className="relative left-32 bottom-2" href="/">Noted</a>
+                </div>
+            </nav> */}
+            <nav className="p-5 flex justify-between bg-white absolute top-0 -left-1 w-full mb-3">
+            {/* <MenuIcon/> */}
+            <div className="relative left-16 flex">
+                <span className="text-black flex content-center max-h-5 mb-2">
+                <span>
+                    <img src={icon} style={{height : '200%', marginLeft:"0rem"}}  alt='logo' />
+                </span>
+                </span>
+                <div className="relative right-20 text-5xl text-custom font-bold">
+                <button onClick={toHome}>Noted</button>
+                </div>
+            </div>
             </nav>
             <div className='register-page'>
 
-                <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                <div className="min-h-full flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
                     <div className="max-w-md w-full space-y-8">
                         <div>
                             <h2 className="font-custom mt-6 text-center text-3xl font-extrabold text-gray-900">Register on Noted</h2>
