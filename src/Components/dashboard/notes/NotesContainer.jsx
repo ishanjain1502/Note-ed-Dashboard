@@ -1,12 +1,13 @@
 import Box from '@mui/material/Box';
-import ButtonGroup from '@mui/material/ButtonGroup';
+// import ButtonGroup from '@mui/material/ButtonGroup';
 import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Editor from '../Editor/Editor';
 import Notestamp from './Notestamp';
-import SortTimeline from './SortTimeline';
+// import SortTimeline from './SortTimeline';
 import './sortTimeLine.css';
+import './notesframe.css';
 
 export default function NotesContainer(props) {
     const [timestamp, setTimstamp] = useState(null);
@@ -23,7 +24,7 @@ export default function NotesContainer(props) {
         ],
         version: "2.11.10"
     });
-    const { video_name, video_id,player } = props;
+    const { video_name, video_id, player } = props;
 
     let host = "http://localhost:8000"
 
@@ -51,17 +52,17 @@ export default function NotesContainer(props) {
             {timestamp ? <div className='notes-container'>
 
                 <div className="notes-timeline-container text-center">
-                    <h1 className='py-2 text-xl'>Video notes timeline</h1>
-                    <ButtonGroup variant="contained" aria-label="outlined primary button group">
+                    <h1 className='py-2 timeline-title'>Video notes timeline</h1>
+                    <div className='timestamp-btn-container'>
                         {timestamp && timestamp.map((time, index) => {
 
                             let currentTime = Object.keys(time)[0];
                             return <Notestamp player={player} key={currentTime} time={currentTime} timestamp={time} activeTimestamp={activeTimestamp} setActiveTimestamp={setActiveTimestamp}></Notestamp>
                         })}
-                    </ButtonGroup>
-                    <div className="sort-btn">
-                        <SortTimeline />
                     </div>
+                    {/* <div className="sort-btn">
+                        <SortTimeline />
+                    </div> */}
                 </div>
 
                 <div className="notes-editor-container py-2 text-center">

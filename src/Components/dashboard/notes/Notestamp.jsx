@@ -1,10 +1,11 @@
 import React from 'react'
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import './sortTimeLine.css';
 
 export default function Notestamp({ timestamp, time, activeTimestamp, setActiveTimestamp, player }) {
     const seekToTimestamp = (seconds) => {
         player.current.seekTo(seconds, 'seconds');
+        // player.current.play()
     }
     const getSeconds = (time) => {
         let timeArr = time.split(":");
@@ -35,6 +36,8 @@ export default function Notestamp({ timestamp, time, activeTimestamp, setActiveT
         seekToTimestamp(seconds);
     }
     return (
-        <Button onClick={onNotestampClick} className='timeline-btn'>{time}</Button>
+        <div className="timestamp-btn">
+        <button onClick={onNotestampClick} className='timeline-btn'>{time}</button>
+        </div>
     )
 }

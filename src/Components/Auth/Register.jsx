@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -42,7 +42,9 @@ export default function Register() {
             console.log(err);
         })
     }
-
+    useEffect(()=>{
+        document.title = "Register to Noted"
+      },[])
     return (
         <div>
             {/* <nav>
