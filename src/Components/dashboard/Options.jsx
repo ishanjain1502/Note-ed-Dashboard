@@ -1,13 +1,12 @@
-import * as React from 'react';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import FolderDropdown from './FoldersDropdown';
 import axios from 'axios';
+import * as React from 'react';
+import FolderDropdown from './FoldersDropdown';
 export default function Options(props) {
   const token=localStorage.getItem('token').toString();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -172,7 +171,7 @@ const deleteVideo=()=>{
         onClick={handleClick}
         className='self-end'
       >
-        <MoreHorizIcon className='text-gray-50'/>
+        <MoreHorizIcon className='text-gray-50 '/>
       </Button>
       <Menu
         id="basic-menu"
@@ -182,9 +181,10 @@ const deleteVideo=()=>{
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
+        style = {{"color" : "white"}}
       >
         
-        <MenuItem onClick={(e)=>{
+        {/* <MenuItem onClick={(e)=>{
           handleClose();
           handleModalOpen(e);
         }}>Edit Name</MenuItem>
@@ -192,6 +192,14 @@ const deleteVideo=()=>{
           handleClose();
           handleModalOpen(e);
         }}>Change Folder</MenuItem>}
+        <MenuItem onClick={()=>{
+          handleClose();
+          deleteVideo();
+        }}>Delete</MenuItem> */}
+        <MenuItem onClick={(e)=>{
+          handleClose();
+          handleModalOpen(e);
+        }}>Edit Name</MenuItem>
         <MenuItem onClick={()=>{
           handleClose();
           deleteVideo();
@@ -220,12 +228,12 @@ const deleteVideo=()=>{
                   <label htmlFor="text" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">{props.folders?"Folder Name":"Video Name"}</label>
                   <input value={title} onChange={(e)=>{
                     setTitle(e.target.value);
-                  }} type="text" name="title" id="title" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder={props.folders?"Folder Name":"Video Name"} required />
+                  }} type="text" name="title" id="title" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-new-blue focus:border-new-blue block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder={props.folders?"Folder Name":"Video Name"} required />
                 </div>}
                
                
                 
-                <button type="button" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={modalType===-1?submitChangeFolder:submitTitle}>Done</button>
+                <button type="button" className="w-full text-white bg-new-blue hover:bg-new-green focus:ring-4 focus:outline-none focus:ring-new-blue font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-new-blue dark:hover:bg-new-blue dark:focus:ring-new-blue" onClick={modalType===-1?submitChangeFolder:submitTitle}>Done</button>
                 
               </form>
             </div>

@@ -36,3 +36,14 @@ section.notes-and-video.flex {
     justify-content: center;
     gap: 2rem;
 }
+
+
+button.MuiButton-root {
+    background-color: white;
+    align-self: flex-end;
+}
+
+button.MuiButton-root svg{
+    fill: rgb(66, 65, 65);
+}
+
