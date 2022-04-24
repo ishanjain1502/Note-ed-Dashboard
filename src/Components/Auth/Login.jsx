@@ -78,7 +78,7 @@ export default function Login(props) {
             <div className="relative left-16 flex">
                 <span className="text-black flex content-center max-h-5 mb-2">
                 <span>
-                    <img src={icon} style={{height : '200%', marginLeft:"3rem"}}  alt='logo' />
+                    <img src={icon} style={{height : '200%', marginLeft:"0rem"}}  alt='logo' />
                 </span>
                 </span>
                 <div className="relative right-20 text-5xl text-custom font-bold">
