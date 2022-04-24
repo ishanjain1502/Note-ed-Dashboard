@@ -52,7 +52,7 @@ export default function NotesContainer(props) {
             {timestamp ? <div className='notes-container'>
 
                 <div className="notes-timeline-container text-center">
-                    <h1 className='py-2 text-xl'>Video notes timeline</h1>
+                    <h1 className='py-2 timeline-title'>Video notes timeline</h1>
                     <div className='timestamp-btn-container'>
                         {timestamp && timestamp.map((time, index) => {
 

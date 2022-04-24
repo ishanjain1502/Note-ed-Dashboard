@@ -53,7 +53,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  background-color: var(--primary-light);
+  background-color: #f0f8ff;
   border-radius: 5px;
   gap: 1rem;
 }

@@ -75,7 +75,7 @@ export default function Editor({ activeTimestamp ,videoName}) {
         <>
             <div className="video-nav">
                 <div className="video-info">
-                    <p className='exact-time'>{`Notes on : ${exactTime}`}</p>
+                    <p className='exact-time'>{`${exactTime}`}</p>
                     <button className={`save-notes-btn save-disabled shadow-sm btn-link px-2 ${disabledState}`} onClick={saveData}>Save</button>
                 </div>
                 <div className="btn-container">
