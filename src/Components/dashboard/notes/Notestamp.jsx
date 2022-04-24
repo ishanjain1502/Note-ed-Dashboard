@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import './sortTimeLine.css';
 
 export default function Notestamp({ timestamp, time, activeTimestamp, setActiveTimestamp, player }) {
@@ -35,6 +35,8 @@ export default function Notestamp({ timestamp, time, activeTimestamp, setActiveT
         seekToTimestamp(seconds);
     }
     return (
-        <Button onClick={onNotestampClick} className='timeline-btn'>{time}</Button>
+        <div className="timestamp-btn">
+        <button onClick={onNotestampClick} className='timeline-btn'>{time}</button>
+        </div>
     )
 }
