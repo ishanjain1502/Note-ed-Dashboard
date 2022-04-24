@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import icon from '../../assets/icon.png';
 // import { LockClosedIcon } from '@heroicons/react/solid'
 
 // globle variables 
@@ -31,7 +32,9 @@ export default function Login(props) {
     const onPassChange = (e)=>{
         setPassword(e.target.value);
     }
-
+    const toHome = () => {
+        navigate('/')
+    }
     const loginUser = (e) => {
         e.preventDefault();
         console.log("logging in...");
@@ -59,7 +62,7 @@ export default function Login(props) {
 
     return (
         <div>
-            <nav>
+            {/* <nav>
                 <div style={{
                     "fontSize": "50px",
                     "fontWeight": "700",
@@ -69,10 +72,23 @@ export default function Login(props) {
                     "marginBottom": "-2rem",
                     "color": "#0091ad",
                 }}><a href="/">Noted</a></div>
+            </nav> */}
+            <nav className="p-5 flex justify-between bg-white absolute top-0 -left-1 w-full mb-3">
+            {/* <MenuIcon/> */}
+            <div className="relative left-16 flex">
+                <span className="text-black flex content-center max-h-5 mb-2">
+                <span>
+                    <img src={icon} style={{height : '200%', marginLeft:"3rem"}}  alt='logo' />
+                </span>
+                </span>
+                <div className="relative right-20 text-5xl text-custom font-bold">
+                <button onClick={toHome}>Noted</button>
+                </div>
+            </div>
             </nav>
             <div className='login-page'>
 
-                <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                <div className="min-h-full flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
                     <div className="max-w-md w-full space-y-8">
                         <div>
                             <h2 className="font-custom mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to Noted</h2>

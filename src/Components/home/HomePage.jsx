@@ -9,6 +9,7 @@ import './styles.css';
 
 import listIcon from "../../assets/images/list-main.png";
 import youTubeIcon from "../../assets/images/youtube.svg";
+import icon from '../../assets/icon.png';
 
 
 
@@ -18,15 +19,33 @@ export default function HomePage() {
     const toLogin = () => {
         navigate('/login')
     }
+    const toHome = () => {
+        navigate('/')
+    }
     return (
-        <>
+        <>      
             <header className='header-section'>
-            <div className="hero-heading-container">
-
-                <h1 className='hero-heading'>Noted</h1>
+            {/* <div className="hero-heading-container">
+                <h1 className='hero-heading'>
+                    <img className="max-h-12 -mt-0 p-1 ml-20 -mb-12" src={icon} alt='logo' />
+                    <a className="relative left-32 bottom-2" href="/">Noted</a>
+                </h1>
+            </div> */}
+            <nav className="p-5 flex justify-between bg-white absolute top-0 -left-1 w-full mb-3">
+            {/* <MenuIcon/> */}
+            <div className="relative left-16 flex">
+                <span className="text-black flex content-center max-h-5 mb-2">
+                <span>
+                    <img src={icon} style={{height : '200%', marginLeft:"3rem"}}  alt='logo' />
+                </span>
+                </span>
+                <div className="relative right-20 text-5xl text-custom font-bold">
+                <button onClick={toHome}>Noted</button>
+                </div>
             </div>
+            </nav>
 
-                <div className="my-hero">
+                <div className="mt-12 my-hero">
                     <div className="hero-info">
                         <h1 className='short-intro'>Taking notes while watching Youtube?</h1>
                         <p className="intro-text">Do it with the most easy to use note taking chrome extension</p>
