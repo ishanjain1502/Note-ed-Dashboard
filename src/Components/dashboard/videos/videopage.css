@@ -43,7 +43,5 @@ button.MuiButton-root {
     align-self: flex-end;
 }
 
-button.MuiButton-root svg{
-    fill: rgb(66, 65, 65);
-}
+
 

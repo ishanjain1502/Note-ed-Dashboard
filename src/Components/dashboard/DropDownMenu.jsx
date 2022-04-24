@@ -54,7 +54,7 @@ const DropDownMenu = () => {
           onClick={handleClick}
           sx = {{transform: "scale(1.5)"}}
         >
-          <AssignmentIndIcon/>
+          <AssignmentIndIcon style={{ color: "#0091ad"}}/>
         </Button>
         <Menu
           id="basic-menu"

@@ -171,7 +171,8 @@ const deleteVideo=()=>{
         onClick={handleClick}
         className='self-end'
       >
-        <MoreHorizIcon className='text-gray-50 '/>
+        <MoreHorizIcon className='text-gray-50 ' style={{ color: "gray"
+}}/>
       </Button>
       <Menu
         id="basic-menu"

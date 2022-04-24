@@ -5,7 +5,7 @@ import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import icon from '../../../assets/icon.png';
 import Video from "./Video";
-
+import DropDownMenu from "../DropDownMenu";
 // http://Backend-1.prathameshdukare.repl.co/api/v1/search/video?videoname=abc&deleted=false
 
 export default function VideoHome( active) {
@@ -140,12 +140,8 @@ export default function VideoHome( active) {
               <SearchIcon style={{ color: "white" }} />
             </button>
           </div>
-          <span className="profile w-8 text-xl ">
-            <button onClick={toProfile}>
-              <AccountCircleIcon
-                style={{ color: "#0091ad", transform: "scale(1.5)" }}
-              />
-            </button>
+          <span>
+            <DropDownMenu></DropDownMenu>
           </span>
         </nav>
         <hr/>
