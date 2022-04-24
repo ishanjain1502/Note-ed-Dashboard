@@ -21,7 +21,10 @@ export default function HomePage() {
     return (
         <>
             <header className='header-section'>
+            <div className="hero-heading-container">
+
                 <h1 className='hero-heading'>Noted</h1>
+            </div>
 
                 <div className="my-hero">
                     <div className="hero-info">
