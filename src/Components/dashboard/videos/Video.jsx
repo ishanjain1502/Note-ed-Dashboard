@@ -29,7 +29,7 @@ export default function Video(props) {
     
     
     return (
-        <div className='w-7/8 h-72 rounded-md font-semibold cursor-pointer items-center justify-between p-2 shadow-xl m-2 bg-white  hover:drop-shadow-2xl  hover:scale-105'>
+        <div className='w-7/8 h-72 video-card rounded-md font-semibold cursor-pointer items-center justify-between p-2 shadow-xl m-2 bg-white  hover:drop-shadow-2xl  hover:scale-105 hover:transition: 0.25s'>
             
             <div onClick={navigateToVideoPage}>
             <div className='self-center' >

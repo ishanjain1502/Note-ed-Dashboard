@@ -1,3 +1,6 @@
 .image{
     height: 21.875rem;
 }
+.video-card{
+    transition: 0.25s;
+}
