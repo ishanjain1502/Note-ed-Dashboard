@@ -44,19 +44,14 @@ export default function Header() {
               </span>
             </span>
             <div className="relative right-20 text-5xl text-new-blue font-bold">
-              <button>Noted</button>
+              <button onClick={toHome} >Noted</button>
             </div>
           </div>
 
           <div className="w-2/3">
-            <input
-              className="h-8 w-3/4 p-3 pl-5 border-2 border-t-black border-l-black border-b-black	rounded-l-md"
-              value={query}
-              placeholder="Search"
-              onChange={(e) => {
-                setQuery(e.target.value);
-              }}
-            />
+            <div
+              className="h-8 w-3/4 p-3 pl-5 border-2 border-t-black border-l-black border-b-black	rounded-l-md">
+                </div>
             <button className="px-4 bg-new-blue h-8" onClick={searchQuery}>
               <SearchIcon style={{ color: "white" }} />
             </button>
