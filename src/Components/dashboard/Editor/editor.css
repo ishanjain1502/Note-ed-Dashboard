@@ -83,3 +83,7 @@ div#editorjs {
   padding: 0.4rem 1.2rem;
   margin: 0 15px;
 }
+
+.alert-bar{
+  display: none;
+}
