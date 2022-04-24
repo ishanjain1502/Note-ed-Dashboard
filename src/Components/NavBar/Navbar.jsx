@@ -50,11 +50,8 @@ export default function Header() {
 
           <div className="w-2/3">
             <div
-              className="h-8 w-3/4 p-3 pl-5 border-2 border-t-black border-l-black border-b-black	rounded-l-md">
+              className="h-8 w-3/4 ">
                 </div>
-            <button className="px-4 bg-new-blue h-8" onClick={searchQuery}>
-              <SearchIcon style={{ color: "white" }} />
-            </button>
           </div>
           <span className="profile w-8 text-xl ">
             <button onClick={toProfile}>
