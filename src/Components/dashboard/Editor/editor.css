@@ -81,4 +81,5 @@ button.save-notes-btn:hover {
 div#editorjs {
   text-align: left;
   padding: 0.4rem 1.2rem;
+  margin: 0 15px;
 }

@@ -85,6 +85,7 @@ export default function Editor({ activeTimestamp ,videoName}) {
             </div>
 
             <div id="editorjs"></div>
+            <p className="add-more">add more notes...</p>
 
         </>
 
