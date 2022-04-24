@@ -1,6 +1,5 @@
 /*global chrome*/
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -34,39 +33,43 @@ export default function Header() {
     }
 
   return (
-      <>
-    <nav className='p-5 flex justify-between  bg-gradient-to-r from-indigo-500 to-blue-500 ' >
-        {/* <MenuIcon/> */}
-        <div>
-        <button className='' >
-            <MenuIcon style={{ color: "white" , "margin-bottom" : "7px"}}/>
-        </button>
-        <image src={icon} alt='logo' /> 
-        <span className='text-white text-2xl '>
-            &nbsp;&nbsp;&nbsp;
-            <span className=' w-8 h-4 pt-16' style={{"background-image" : "url(https://github.com/sasta-notion/Note-Ed-Chrome-Extension/blob/master/src/assets/img/icon-34.png)"}} >  </span>
-         <button onClick={toHome} > Noted</button>
-        </span>
-        </div>
+    <div>
         
-        <div className='w-2/3'>
-            <input className='h-8 w-3/4 p-3'
-                value={query}
-                placeholder='   Search Videos here'
-                onChange={(e)=> {setQuery(e.target.value)}}
+        <nav className="p-5 flex justify-between bg-white relative top-0 -left-1 w-full mb-3">
+          {/* <MenuIcon/> */}
+          <div className="relative left-16 flex">
+            <span className="text-black flex content-center max-h-5 mb-2">
+              <span>
+                <img src={icon} style={{height : '200%'}}  alt='logo' />
+              </span>
+            </span>
+            <div className="relative right-20 text-5xl text-new-blue font-bold">
+              <button>Noted</button>
+            </div>
+          </div>
+
+          <div className="w-2/3">
+            <input
+              className="h-8 w-3/4 p-3 pl-5 border-2 border-t-black border-l-black border-b-black	rounded-l-md"
+              value={query}
+              placeholder="Search"
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
             />
-            <button className='px-4 bg-zinc-300 h-8'
-                onClick={()=>{searchQuery(query)}}
-            > <SearchIcon style={{ color: "white" }}/> </button>
-        </div>
-        <span className='profile w-8 text-xl '>
-          <button
-          onClick={toProfile} >
-          <AccountCircleIcon style={{color: "white" , "transform" : "scale(1.5)"}} />
-          </button>
-          
-        </span>
-    </nav>
-    </>
+            <button className="px-4 bg-new-blue h-8" onClick={searchQuery}>
+              <SearchIcon style={{ color: "white" }} />
+            </button>
+          </div>
+          <span className="profile w-8 text-xl ">
+            <button onClick={toProfile}>
+              <AccountCircleIcon
+                style={{ color: "rgb(0,102,122)", transform: "scale(1.5)" }}
+              />
+            </button>
+          </span>
+        </nav>
+      </div>
+
   )
 }

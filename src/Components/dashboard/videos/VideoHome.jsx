@@ -1,15 +1,20 @@
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
 import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import icon from '../../../assets/icon.png';
 import Video from "./Video";
+
+// http://Backend-1.prathameshdukare.repl.co/api/v1/search/video?videoname=abc&deleted=false
+
+export default function VideoHome( active) {
 
     const [videos, setVideos] = useState();
     let host = "http://localhost:8000"
     const navigate = useNavigate();
     const [query, setQuery] = useState("");
+    
     let basic = 0;
     
     useEffect(() => {
@@ -66,7 +71,6 @@ import Video from "./Video";
 
 
 
- 
   const searchQuery = async () => {
     let token = localStorage.getItem("token").toString();
     console.log("Searching query");
@@ -106,54 +110,42 @@ import Video from "./Video";
   return (
     <>
       <div>
-        <nav className="p-5 flex justify-between  bg-gradient-to-r from-indigo-500 to-blue-500 absolute top-0 -left-1 w-full mb-5">
+        
+        <nav className="p-5 flex justify-between bg-white absolute top-0 -left-1 w-full mb-3">
           {/* <MenuIcon/> */}
-          <div>
-            <button className="">
-              <MenuIcon style={{ color: "white", "margin-bottom": "7px" }} />
-            </button>
-            <image
-              src={
-                "https://github.com/sasta-notion/Note-ed-Dashboard/blob/master/src/assets/icon.png"
-              }
-              alt="logo"
-            />
-            <span className="text-white text-2xl ">
-              &nbsp;&nbsp;&nbsp;
-              <span
-                className=" w-8 h-4 pt-16"
-                style={{
-                  "background-image":
-                    "url(https://github.com/sasta-notion/Note-Ed-Chrome-Extension/blob/master/src/assets/img/icon-34.png)",
-                }}
-              >
-                {" "}
+          <div className="relative left-16 flex">
+            <span className="text-black flex content-center max-h-5 mb-2">
+              <span>
+                <img src={icon} style={{height : '175%'}}  alt='logo' />
               </span>
-              <button onClick={toHome}> Noted</button>
             </span>
+            <div className="relative right-20 text-5xl text-new-blue font-bold">
+              <button>Noted</button>
+            </div>
           </div>
 
           <div className="w-2/3">
             <input
-              className="h-8 w-3/4 p-3"
+              className="h-8 w-3/4 p-3 pl-5 border-2 border-t-black border-l-black border-b-black	rounded-l-md"
               value={query}
-              placeholder="   Search Videos here"
+              placeholder="Search"
               onChange={(e) => {
                 setQuery(e.target.value);
               }}
             />
-            <button className="px-4 bg-zinc-300 h-8" onClick={searchQuery}>
+            <button className="px-4 bg-new-blue h-8" onClick={searchQuery}>
               <SearchIcon style={{ color: "white" }} />
             </button>
           </div>
           <span className="profile w-8 text-xl ">
             <button onClick={toProfile}>
               <AccountCircleIcon
-                style={{ color: "white", transform: "scale(1.5)" }}
+                style={{ color: "rgb(0,102,122)", transform: "scale(1.5)" }}
               />
             </button>
           </span>
         </nav>
+        <hr/>
       </div>
       {/* NavBar iske upr */}
 
@@ -170,8 +162,13 @@ import Video from "./Video";
                 </div>
               );
             })}
+           
         </div>
+        <div className=" text-new-green text-ellipsis " >
+              <p className="text-2xl text-center p-4 m-2 font-bold" >**Thats's All Folks**</p>
       </div>
+      </div>
+      
     </>
   );
 }
