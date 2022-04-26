@@ -11,7 +11,7 @@ import DropDownMenu from "../DropDownMenu";
 export default function VideoHome( active) {
 
     const [videos, setVideos] = useState();
-    let host = "http://localhost:8000"
+    let host = 'https://backend-1.prathameshdukare.repl.co'
     const navigate = useNavigate();
     const [query, setQuery] = useState("");
     

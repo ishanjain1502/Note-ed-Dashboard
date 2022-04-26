@@ -11,7 +11,7 @@ import axios from 'axios';
 
 export default function BasicSelect(props) {
   const [folder, setFolder] = React.useState('');
-
+  const api_url = 'https://backend-1.prathameshdukare.repl.co'
   const handleChange = (event) => {
     setFolder(event.target.value);
     props.changeFolder(event);
@@ -21,7 +21,7 @@ export default function BasicSelect(props) {
 
     useEffect(()=>{
      const token=localStorage.getItem('token').toString();
-     axios.get(`http://localhost:8000/api/v1/folder/getfolders?deleted=false`, {
+     axios.get(`${api_url}/api/v1/folder/getfolders?deleted=false`, {
          headers: {
              Authorization: `Bearer ${token}`
          }

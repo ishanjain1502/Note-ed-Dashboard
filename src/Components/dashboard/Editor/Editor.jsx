@@ -6,7 +6,7 @@ import tools from "./commonTools"
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 
-const API_HOST = 'http://localhost:8000';
+const API_HOST = 'https://backend-1.prathameshdukare.repl.co';
 let alertDiv = document.getElementsByClassName("alert-bar")
 
 export default function Editor({ activeTimestamp, videoName }) {

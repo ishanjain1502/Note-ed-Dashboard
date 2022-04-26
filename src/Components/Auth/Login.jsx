@@ -11,6 +11,9 @@ import icon from '../../assets/icon.png';
 const extensionId = 'jklnlkhjnomickibcdjofabgbhadpkfm'
 
 export default function Login(props) {
+
+    const url = 'https://backend-1.prathameshdukare.repl.co';
+
     const navigate = useNavigate();
     const {loggedInStatus,setloggedInStatus} = props;
     const [email,setEmail] = useState('');
@@ -38,7 +41,7 @@ export default function Login(props) {
     const loginUser = (e) => {
         e.preventDefault();
         console.log("logging in...");
-        axios.post(`http://localhost:8000/api/v1/signin`, {
+        axios.post(`${url}/api/v1/signin`, {
             "email":email,
             "password":password
         }).then(data => data.data)

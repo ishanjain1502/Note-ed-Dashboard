@@ -1,18 +1,20 @@
 
-import React, { useEffect, useState } from 'react';
-import Navbar from './Navbar';
-import EditInfo from './EditInfo';
-import { useNavigate } from 'react-router-dom';
-import StatsBox from './StatsBox';
 import axios from 'axios';
-import multiavatar from '@multiavatar/multiavatar/esm';
-import Avatar, { genConfig } from 'react-nice-avatar'
+import React, { useEffect, useState } from 'react';
+import Avatar, { genConfig } from 'react-nice-avatar';
+import { useNavigate } from 'react-router-dom';
+import EditInfo from './EditInfo';
+import Navbar from './Navbar';
+import StatsBox from './StatsBox';
 export default function Profile() {
     const navigate = useNavigate();
     const [open,setOpen]=useState(false);
     const [modalType,setModalType]=useState(" ");
     const [data,setData]=useState({});
     const [stats,setStats]=useState({});
+
+    const API_URL = 'https://backend-1.prathameshdukare.repl.co'
+
     const handleOpen=(e)=>{
         setModalType(e.target.value);
         setOpen(true);
@@ -50,7 +52,7 @@ export default function Profile() {
     
     const getStats=()=>{
         const token=localStorage.getItem('token');
-        axios.get(`http://localhost:8000/api/v1/getstats`, {
+        axios.get(`${API_URL}/api/v1/getstats`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
