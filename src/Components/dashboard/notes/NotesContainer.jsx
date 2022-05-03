@@ -13,12 +13,12 @@ export default function NotesContainer(props) {
     const [timestamp, setTimstamp] = useState(null);
     const [videoName, setVideoName] = useState("");
     const [activeTimestamp, setActiveTimestamp] = useState({
-        time: 1552744582955,
+        time: null,
         blocks: [
             {
                 type: "paragraph",
                 data: {
-                    text: "Welcome to Sasta Notion"
+                    text: "Welcome to Noted"
                 }
             }
         ],
@@ -35,8 +35,7 @@ export default function NotesContainer(props) {
                 Authorization: `Bearer ${token}`
             }
         }).then(data => {
-            console.log(data);
-            setVideoName(data.data.videoname)
+            setVideoName(data.data.videoname);
             setTimstamp(data.data.data);
             setActiveTimestamp(data.data.data[0]);
         })

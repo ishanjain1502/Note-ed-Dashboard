@@ -36,7 +36,6 @@ export default function VideoHome( active) {
     useEffect(() => {
         const token=localStorage.getItem('token').toString();
         let arr1 = Object.values(active)
-        console.log(arr1);
         if(typeof active !== ""){
             axios.post(`${host}/api/v1/folder/getvideos`,  {
                 "folder_name" : arr1[0]
@@ -45,13 +44,11 @@ export default function VideoHome( active) {
                     Authorization : `Bearer ${token}`
                 }
             }).then((res)=> {
-                console.log(res.data.message);
+                // console.log(res.data.message);
                 let data = res.data.data
-                console.log(data);
-
 
                 if(res.data.message === 'success'){
-                  console.log("Inside Success");
+                  // console.log("Inside Success");
                   setVideos(data)
                 }
 
@@ -73,8 +70,6 @@ export default function VideoHome( active) {
 
   const searchQuery = async () => {
     let token = localStorage.getItem("token").toString();
-    console.log("Searching query");
-    console.log(query);
     axios
       .get(`${host}/api/v1/search/video/?videoname=${query}&deleted=false`, {
         headers: {
@@ -83,8 +78,6 @@ export default function VideoHome( active) {
       })
       .then((res) => {
         console.log(res);
-        console.log(res.data.videos);
-        console.log(res.data.message);
         if (res.data.message === "fetched relevant videos") {
           console.log("INSIDE IF");
           let arr = [res.data.videos];
@@ -153,7 +146,7 @@ export default function VideoHome( active) {
           {videos &&
             videos.map((video) => {
               return (
-                <div>
+                <div key={video.video_id}>
                   <Video
                     video={video}
                     deleteVideoFromArray={deleteVideoFromArray}

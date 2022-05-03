@@ -11,7 +11,6 @@ let alertDiv = document.getElementsByClassName("alert-bar")
 
 export default function Editor({ activeTimestamp, videoName }) {
     const [isAlert, setIsAlert] = useState(true);
-    // const [data, setData] = useState(null);
     const [loading, setLoading] = React.useState(true);
     const [disabledState, setdisabledState] = React.useState("");
 
