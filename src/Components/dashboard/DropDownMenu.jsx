@@ -36,7 +36,7 @@ const DropDownMenu = () => {
 
     // sending logged out info to extension
     let authObj =  JSON.stringify({"loggedInStatus":false,"authToken":null});
-    sendLoggedOutInfo({ extensionId: 'jklnlkhjnomickibcdjofabgbhadpkfm', authInfo: authObj})
+    sendLoggedOutInfo({ extensionId: 'mddgplepaeofegeediconadgglhkokkg', authInfo: authObj})
     localStorage.removeItem('token');
     // setloggedInStatus(false); 
 
