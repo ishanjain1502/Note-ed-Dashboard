@@ -15,7 +15,7 @@ export default function Login(props) {
     const url = 'https://backend-1.prathameshdukare.repl.co';
 
     const navigate = useNavigate();
-    const {loggedInStatus,setloggedInStatus} = props;
+    const {setloggedInStatus} = props;
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const notify = () => toast("Welcome back 😇 "); 
