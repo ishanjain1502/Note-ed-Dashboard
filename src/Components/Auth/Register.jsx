@@ -47,18 +47,6 @@ export default function Register() {
       },[])
     return (
         <div>
-            {/* <nav>
-                <div style={{
-                    "fontSize": "50px",
-                    "fontWeight": "700",
-                    "marginTop": "0rem",
-                    "paddingTop": "1rem",
-                    "color": "#0091ad",
-                }}>
-                    <img className="max-h-12 -mt-0 p-1 ml-20 -mb-12" src={icon}  style={{height : '175%'}} alt='logo' />
-                    <a className="relative left-32 bottom-2" href="/">Noted</a>
-                </div>
-            </nav> */}
             <nav className="p-5 flex justify-between bg-white absolute top-0 -left-1 w-full mb-3">
             {/* <MenuIcon/> */}
             <div className="relative left-16 flex">
@@ -85,7 +73,7 @@ export default function Register() {
                             <div className="rounded-md shadow-sm -space-y-px">
                             <input
                                 type="text"
-                                class="font-custom appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-custom focus:border-custom focus:z-10 sm:text-sm"
+                                className="font-custom appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-custom focus:border-custom focus:z-10 sm:text-sm"
                                 name="username"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
@@ -93,7 +81,7 @@ export default function Register() {
 
                             <input
                                 type="text"
-                                class="font-custom appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-none focus:outline-none focus:ring-custom focus:border-custom focus:z-10 sm:text-sm"
+                                className="font-custom appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-none focus:outline-none focus:ring-custom focus:border-custom focus:z-10 sm:text-sm"
                                 name="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -101,17 +89,19 @@ export default function Register() {
 
                             <input
                                 type="password"
-                                class="font-custom appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-none focus:outline-none focus:ring-custom focus:border-custom focus:z-10 sm:text-sm"
+                                className="font-custom appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-none focus:outline-none focus:ring-custom focus:border-custom focus:z-10 sm:text-sm"
                                 name="password"
                                 placeholder="Password"
                                 value={password}
+                                autoComplete
                                 onChange={(e) => setPassword(e.target.value)} />
                             <input
                                 type="password"
-                                class="font-custom appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-custom focus:border-custom focus:z-10 sm:text-sm"
+                                className="font-custom appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-custom focus:border-custom focus:z-10 sm:text-sm"
                                 name="confirm_password"
                                 placeholder="Confirm Password"
                                 value={comfirm}
+                                autoComplete
                                 onChange={(e) => setComfirm(e.target.value)} />
                                     
                             </div>
@@ -128,9 +118,9 @@ export default function Register() {
                                     Register
                                 </button>
                             </div>
-                            <div class="font-custom text-center text-grey-dark mt-6">
+                            <div className="font-custom text-center text-grey-dark mt-6">
                                 Already have an account?
-                                <a class="font-custom border-b-4 border-blue text-underline" href="../login/">
+                                <a className="font-custom border-b-4 border-blue text-underline px-2 text-blue-700 font-bold" href="../login/">
                                     Log in
                                 </a>
                             </div>

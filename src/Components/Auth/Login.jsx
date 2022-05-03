@@ -164,9 +164,9 @@ export default function Login(props) {
                                     Sign in
                                 </button>
                             </div>
-                            <div class="font-custom text-center text-grey-dark mt-6">
+                            <div className="font-custom text-center text-grey-dark mt-6">
                                 Don't have an account?
-                                <a class="font-custom border-b-4 border-blue text-underline" href="../register/">
+                                <a className="font-custom border-b-4 border-blue text-underline px-2 text-blue-700 font-bold" href="../register/">
                                     Register
                                 </a>
                             </div>
