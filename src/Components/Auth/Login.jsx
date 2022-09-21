@@ -173,7 +173,17 @@ export default function Login(props) {
                         </form>
                     </div>
                 </div>
-
+            </div>
+            <div className="tile-for-demo-user flex justify-center text-white" >
+                <div className='bg-teal-400 p-3 rounded-2xl' >
+                    <div className='border-2 border-yellow-500 md:p-5 md:px-16 rounded-2xl' >
+                        <div className='font-bold underline ' ><h3>Demo User</h3></div>
+                        <div>
+                            <span className='flex' ><p> Username : </p> &nbsp; <p> hello123 </p></span>
+                            <span className='flex' ><p> Password : </p> &nbsp; <p> hello123 </p></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
