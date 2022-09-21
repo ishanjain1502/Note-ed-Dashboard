@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Note-ed Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Taking Notes Made Easy by Note-ed <br/>
 
-## Available Scripts
+The repository you are exploring right now is of Note-ed-Dashboard.
 
-In the project directory, you can run:
+## But first of all what is Note-ed
+Noted is a chrome extension that helps you study with YouTube efficiently. With Noted, you can record timestamps and write notes while watching videos, without having to leave the YouTube tab.
 
-### `npm start`
+## What problem it solves
+Taking screenshots of important sections and switching tabs to make notes makes us less productive. The idea is to build a chrome extension and further on a web app to make note-making on YouTube very efficient. Users can easily bookmark a time stamp, write notes and important points via Noted.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How it works ??
+Once you login the dashboard will show you all the videos you have made notes for using noted<br/><br/>
+![image](https://user-images.githubusercontent.com/56102033/187416691-0adb4c73-6da7-4dc9-a7ad-09b5f0722cf8.png)
+<br/><br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+We store all of a users video, in a video collection from where we fetch them to the display, all the videos are clickable that is you can enter the note making section or read your notes just by clicking on the respective video
+<br/>
+There we have used [quill editor](https://quilljs.com/) to make an editor and have used debouncing to autosave the data on our db
+<br/>
+## Tech Stack used
+ReactJS<br/>
+MongoDB<br/>
+TailwindCSS<br/>
+<br/>
 
-### `npm test`
+## To try it on local:
+```javascript
+git clone <repo link>
+cd <repo-dir>
+npm install
+npm run start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For feedbacks and suggestions you can contact me at my [Linkedin](https://www.linkedin.com/in/hey-ishan/) or you can mail me at ishanjain1502@gmail.com
